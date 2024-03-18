@@ -20,13 +20,14 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-function miniMaxSum(arr) {
-    // Write your code here
-}
-
 function main() {
 
-    const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+    // Ex: Leitura de linha que remove espaços em branco e transforma em array de numeros
+    // readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+    novoScript()
 
-    
+}
+
+function novoScript() {
+    // Codigo aqui...
 }
