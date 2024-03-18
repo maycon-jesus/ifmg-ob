@@ -1,4 +1,3 @@
-// Rodar type .\input.txt | node .\amigos.js
 'use strict';
 
 process.stdin.resume();
