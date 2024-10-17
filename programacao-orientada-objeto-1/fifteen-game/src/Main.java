@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     static String[][] gameTable = {{"1", "2", "3"}, {"4", "5", "6"}, {"7", "8", " "}};
-    static Integer[] blankPosition = {2,2}; // Posição em que espaço vazio está {y,x}
+    static Integer[] blankPosition = {2,2};
 
     public static class PossibleMove {
         int[] coords;
