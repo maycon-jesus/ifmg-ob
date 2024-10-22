@@ -33,12 +33,46 @@ public class Main { // Classe Principal do Programa
         return possibles;
     }
 
-    public static void printTable() {
-        System.out.println("Tabuleiro Atual:\n");
-        for (String[] line : gameTable) {
-            for (String cell : line) {
-                System.out.print(" " + cell + " ");
+    public static void printTable(){
+        enum LinePrintMode {
+            TOP,
+            BOTTOM,
+            CELL_NUMBER,
+            MIDDLE_LINES
+        }
+        LinePrintMode linePrintMode = LinePrintMode.TOP;
+
+        int gameTableLineIndex = 0;
+        for (int lineIndex =0;lineIndex<gameTable.length*2+1;lineIndex++) {
+            switch (linePrintMode) {
+                case LinePrintMode.TOP -> {
+                    System.out.print("┌───┬───┬───┐");
+                    linePrintMode = LinePrintMode.CELL_NUMBER;
+                    break;
+                }
+                case LinePrintMode.BOTTOM -> {
+                    System.out.print("└───┴───┴───┘");
+                    linePrintMode = LinePrintMode.CELL_NUMBER;
+                    break;
+                }
+                case LinePrintMode.CELL_NUMBER -> {
+
+                    System.out.print("│ "+gameTable[gameTableLineIndex][0]+" │ "+gameTable[gameTableLineIndex][1]+" │ "+gameTable[gameTableLineIndex][2]+" │");
+                    gameTableLineIndex++;
+                    if(lineIndex==gameTable.length*2-1){
+                        linePrintMode = LinePrintMode.BOTTOM;
+                    }else{
+                        linePrintMode = LinePrintMode.MIDDLE_LINES;
+                    }
+                    break;
+                }
+                case LinePrintMode.MIDDLE_LINES -> {
+                    System.out.print("├───┼───┼───┤");
+                    linePrintMode = LinePrintMode.CELL_NUMBER;
+                    break;
+                }
             }
+
             System.out.println();
         }
     }
@@ -86,7 +120,6 @@ public class Main { // Classe Principal do Programa
 
             String choice = scanner.nextLine();
             PossibleMove possibleMove = possibleMoves.stream().filter(move-> {
-                System.out.println(move.value);
                 return move.value.equals(choice);
             }).findAny().orElse(null);
 
@@ -106,12 +139,14 @@ public class Main { // Classe Principal do Programa
 
         printTable();
 
+        System.out.println("\tTabuleiro ordenado!");
         System.out.println("\nEscolha o seu nivel de dificuldades:\n1 - Facil\n2 - Medio\n3 - Dificil\n");
         System.out.print("\tNivel: ");
 
         int difficulty = Integer.parseInt(scanner.nextLine());
 
         shuffleTable(difficulty); //Funções
+        System.out.println("\tTabuleiro embaralhado. Vamos começar o jogo!");
         printTable(); //Funções
 
         while (!isGameSolved()) {
@@ -119,7 +154,7 @@ public class Main { // Classe Principal do Programa
             printTable();
         }
 
-        System.out.println("Parabens jogador! Voce resolveu o Racha-Cuca!!!");
+        System.out.println("Parabéns jogador! Você resolveu o Racha-Cuca!!!");
     }
 }
 //FIM do Program
