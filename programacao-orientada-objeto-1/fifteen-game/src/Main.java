@@ -3,8 +3,10 @@ import java.util.Scanner; // Importa a classe Scanner
 import java.util.Random; // Importa a Biblioteca para gerar números Aleatórios
 
 public class Main { // Classe Principal do Programa
+
     static String[][] gameTable = {{"1", "2", "3"}, {"4", "5", "6"}, {"7", "8", " "}};
     static Integer[] blankPosition = {2, 2};
+    static Integer moveCouter = 0;
 
     public static class PossibleMove {
         int[] coords;
@@ -115,6 +117,7 @@ public class Main { // Classe Principal do Programa
     public static void playerMove() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
+            System.out.println("Quantidade de jogadas até agora: " + moveCouter);
             System.out.println("Escolha uma das pecas e mova para o espaco vazio:\n");
             ArrayList<PossibleMove> possibleMoves = getPossibleMoves();
 
@@ -129,6 +132,7 @@ public class Main { // Classe Principal do Programa
             }
 
             move(possibleMove);
+            moveCouter++;
             break;
         }
     }
@@ -154,7 +158,7 @@ public class Main { // Classe Principal do Programa
             printTable();
         }
 
-        System.out.println("Parabéns jogador! Você resolveu o Racha-Cuca!!!");
+        System.out.println("Parabens jogador! Voce resolveu o Racha-Cuca em " +moveCouter+ " movimentos!!!");
     }
 }
-//FIM do Program
+//End Program
