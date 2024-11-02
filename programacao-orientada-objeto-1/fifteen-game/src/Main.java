@@ -94,7 +94,7 @@ public class Main { // Classe Principal do Programa
 
     public static void shuffleTable(int difficulty) {
         Random rand = new Random();
-        int shuffles = difficulty * 20;
+        int shuffles = (difficulty-1) * 20 + 20;
         for (int i = 0; i < shuffles; i++) {
             ArrayList<PossibleMove> possibleMoves = getPossibleMoves();
             int num = rand.nextInt(possibleMoves.size());
@@ -118,7 +118,7 @@ public class Main { // Classe Principal do Programa
     public static void playerMove() {
         while (true) {
             System.out.println("Quantidade de jogadas até agora: " + moveCouter);
-            System.out.println("Escolha uma das pecas e mova para o espaco vazio:\n");
+            System.out.print("Escolha uma das pecas e mova para o espaco vazio: ");
             ArrayList<PossibleMove> possibleMoves = getPossibleMoves();
 
             String choice = scanner.nextLine();
