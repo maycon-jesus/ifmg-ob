@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "ROOT"
+		}
+	],
+	"settings": {
+		"discord.lowerDetailsEditing": "Project: [SSH] {workspace}",
+	}
+}
