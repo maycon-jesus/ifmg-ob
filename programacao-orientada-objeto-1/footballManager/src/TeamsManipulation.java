@@ -1,68 +1,74 @@
 import java.util.ArrayList;
 
 public class TeamsManipulation {
-    public void sortTeams(ArrayList<Team> teams){
-        for(int i = 0; i < teams.size(); i++){
+    public void sortTeams(ArrayList<Team> teams) {
+        for (int i = 0; i < teams.size(); i++) {
             Team teamA = teams.get(i);
             Team bigger = teams.get(i);
             int biggerIndex = i;
 
-            for(int j = i+1; j<teams.size(); j++){
+            for (int j = i + 1; j < teams.size(); j++) {
                 Team currentTeamComparative = teams.get(j);
 
-                if(currentTeamComparative.getPontos() < bigger.getPontos()) continue;
-                if(currentTeamComparative.getPontos() > bigger.getPontos()) {
-                    bigger=currentTeamComparative;
+                if (currentTeamComparative.getPontos() < bigger.getPontos()) continue;
+                if (currentTeamComparative.getPontos() > bigger.getPontos()) {
+                    bigger = currentTeamComparative;
                     biggerIndex = j;
                     continue;
-                };
+                }
+                ;
 
-                if(currentTeamComparative.getSaldoGols() < bigger.getSaldoGols()) continue;
-                if(currentTeamComparative.getSaldoGols() > bigger.getSaldoGols()) {
-                    bigger=currentTeamComparative;
+                if (currentTeamComparative.getSaldoGols() < bigger.getSaldoGols()) continue;
+                if (currentTeamComparative.getSaldoGols() > bigger.getSaldoGols()) {
+                    bigger = currentTeamComparative;
                     biggerIndex = j;
                     continue;
-                };
+                }
+                ;
 
-                if(currentTeamComparative.getGolsFeitos() < bigger.getGolsFeitos()) continue;
-                if(currentTeamComparative.getGolsFeitos() > bigger.getGolsFeitos()) {
-                    bigger=currentTeamComparative;
+                if (currentTeamComparative.getGolsFeitos() < bigger.getGolsFeitos()) continue;
+                if (currentTeamComparative.getGolsFeitos() > bigger.getGolsFeitos()) {
+                    bigger = currentTeamComparative;
                     biggerIndex = j;
                     continue;
-                };
+                }
+                ;
 
-                if(currentTeamComparative.getCartoesVermelhos() > bigger.getCartoesVermelhos()) continue;
-                if(currentTeamComparative.getCartoesVermelhos() < bigger.getCartoesVermelhos()) {
-                    bigger=currentTeamComparative;
+                if (currentTeamComparative.getCartoesVermelhos() > bigger.getCartoesVermelhos()) continue;
+                if (currentTeamComparative.getCartoesVermelhos() < bigger.getCartoesVermelhos()) {
+                    bigger = currentTeamComparative;
                     biggerIndex = j;
                     continue;
-                };
+                }
+                ;
 
-                if(currentTeamComparative.getCartoesAmarelos() > bigger.getCartoesAmarelos()) continue;
-                if(currentTeamComparative.getCartoesAmarelos() < bigger.getCartoesAmarelos()) {
-                    bigger=currentTeamComparative;
+                if (currentTeamComparative.getCartoesAmarelos() > bigger.getCartoesAmarelos()) continue;
+                if (currentTeamComparative.getCartoesAmarelos() < bigger.getCartoesAmarelos()) {
+                    bigger = currentTeamComparative;
                     biggerIndex = j;
                     continue;
-                };
+                }
+                ;
             }
 
 //            Invertendo o teamA com o bigger que é o time melhor pontuado
 //            Colocando bigger no começo
-            bigger.setPosition(i+1);
-            teams.set(i,bigger);
+            bigger.setPosition(i + 1);
+            teams.set(i, bigger);
 
 //            Colocando teamA no lugar anterior do bigger
-            teamA.setPosition(biggerIndex+1);
-            teams.set(biggerIndex,teamA);
+            teamA.setPosition(biggerIndex + 1);
+            teams.set(biggerIndex, teamA);
         }
     }
 
-    public void printTeamsTable(ArrayList<Team> teams){
+    public void printTeamsTable(ArrayList<Team> teams) {
         ArrayList<ArrayList<String>> table = new ArrayList<>();
 
         ArrayList<String> headerRow = new ArrayList<>();
         headerRow.add("Posição");
         headerRow.add("Time");
+        headerRow.add("Pontos");
         headerRow.add("Qtd. Jogos");
         headerRow.add("Saldo de Gols");
         headerRow.add("Gols Pró");
@@ -74,6 +80,7 @@ public class TeamsManipulation {
             ArrayList<String> row = new ArrayList<>();
             row.add(team.getPosition().toString());
             row.add(team.getNome());
+            row.add(team.getPontos().toString());
             row.add(team.getGames().toString());
             row.add(team.getSaldoGols().toString());
             row.add(team.getGolsFeitos().toString());
@@ -85,8 +92,8 @@ public class TeamsManipulation {
         new BeautyTable().printArrayList(table);
     }
 
-    public void printTeamDetails(Team team){
-        System.out.println("=====/ DETALHES DA EQUIPE "+team.getNome()+" /=====");
+    public void printTeamDetails(Team team) {
+        System.out.println("=====/ DETALHES DA EQUIPE " + team.getNome() + " /=====");
         System.out.println("Posição na tabela: " + team.getPosition());
         System.out.println("Total de jogos: " + team.getGames());
         System.out.println("Pontos: " + team.getPontos());
