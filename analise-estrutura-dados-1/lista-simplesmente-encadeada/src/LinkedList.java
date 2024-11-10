@@ -44,6 +44,7 @@ class LinkedList<E> {
         // Implementar a remocao de um elemento na lista
         if (this.size == 1 && lista.elemento.equals(item)) {
             lista = null;
+            size--;
             return true;
         } else if (this.size > 1) {
             Item<E> itemAnterior = null;
@@ -59,6 +60,7 @@ class LinkedList<E> {
                     itemAnterior.proximo = itemAtual.proximo;
                 }
             }
+            size--;
             return true;
         } else {
             return false;
