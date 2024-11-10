@@ -73,6 +73,6 @@ public class Team {
     }
 
     public void decreaseGoals(int goals) {
-        this.golsTomados -= goals;
+        this.golsTomados += goals;
     }
 }
