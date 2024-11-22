@@ -6,16 +6,27 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 class TicketSeller {
-	private final Day[] allDays;
+	private static final Day[] allDays = Company.allDays;
 
-	TicketSeller(Day[] allDays) {
-		this.allDays = allDays;
-		promptCustomerInfos();
-		promptCustomerSeatInfo();
+	static void sell() {
+		Customer customer = promptCustomerInfos();
+		Methods.Flight flight = promptCustomerFlightInfo();
+		Seat seat = promptCustomerSeatInfo(flight);
+		Ticket ticket = flight.quotationTicket(customer, seat);
+		confirmTicketQuotation(ticket);
 	}
 
-	private Customer promptCustomerInfos() {
-		System.out.print("====[Informações do passageiro]====");
+	static private boolean confirmTicketQuotation(Ticket ticket){
+		System.out.println("====[DADOS DO PEDIDO]====");
+		System.out.println("Subtotal: R$ "+ticket.getSubtotal());
+		System.out.println("Descontos: R$ "+ticket.getDiscount());
+		System.out.println("Total: R$ "+ticket.getTotal());
+
+		return true;
+	}
+
+	static private Customer promptCustomerInfos() {
+		System.out.print("====[Informações do passageiro]====\n");
 
 		System.out.print("Nome do passageiro: ");
 		String customerName = Operator.scanner.next();
@@ -42,19 +53,31 @@ class TicketSeller {
 		return nCustomer;
 	}
 
-
-	private Seat promptCustomerSeatInfo() {
+	static private Methods.Flight promptCustomerFlightInfo(){
 		System.out.println("====[Informações do voo]====");
 		System.out.print("Data do voo (dd/mm/yyyy): ");
 		String flightDate = Operator.scanner.next();
 		LocalDate flightDateConverted = LocalDate.parse(flightDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-		Flight flight = Company.getFlightByDate(flightDateConverted);
+		Methods.Flight flight = Company.getFlightByDate(flightDateConverted);
 		if (flight == null) {
 			System.out.println("Não possuímos voo nesta data.");
-			return promptCustomerSeatInfo();
+			return promptCustomerFlightInfo();
 		}
+		return flight;
+	}
 
+
+	static private Seat promptCustomerSeatInfo(Methods.Flight flight) {
+		Flight.printFlightSeats(flight);
 		System.out.println("Selecione um assento disponível:");
-		return null;
+		String seatId = Operator.scanner.next().toUpperCase();
+		Seat seat = null;
+		try{
+			seat = flight.getSeatById(seatId);
+		}catch(CustomError err){
+			System.out.println(err.message);
+			return promptCustomerSeatInfo(flight);
+		}
+		return seat;
 	}
 }

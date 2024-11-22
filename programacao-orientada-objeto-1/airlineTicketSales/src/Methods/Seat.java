@@ -35,4 +35,8 @@ public class Seat {
 		this.customer = customer;
 		return true;
 	}
+
+	public double getOriginalPrice() {
+		return originalPrice;
+	}
 }

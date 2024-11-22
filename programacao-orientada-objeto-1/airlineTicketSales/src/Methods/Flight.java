@@ -3,7 +3,7 @@ package Methods;
 import java.util.ArrayList;
 
 public class Flight {
-	private final Seat[][] seats = new Seat[12][4];
+	private final Seat[][] seats = new Seat[11][4];
 
 	Flight() {
 
@@ -62,6 +62,10 @@ public class Flight {
 			}
 		}
 		throw new CustomError("Assento inválido!");
+	}
+
+	public Ticket quotationTicket(Customer customer, Seat seat){
+		return new Ticket(this, seat, customer);
 	}
 
 	public void newTicket(Customer customer, Seat seat) throws CustomError {
