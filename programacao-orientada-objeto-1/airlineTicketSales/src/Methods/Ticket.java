@@ -5,6 +5,7 @@ import java.time.Period;
 public class Ticket {
 	public Flight flight;
 	public Seat seat;
+	public Customer customer;
 	private double subtotal = 0;
 	private double discount = 0;
 	private double discountPercent = 0;
@@ -12,6 +13,7 @@ public class Ticket {
 	Ticket(Flight flight, Seat seat, Customer customer){
 		this.flight=flight;
 		this.seat=seat;
+		this.customer=customer;
 		this.subtotal=seat.getOriginalPrice();
 
 //		Comorbidades
@@ -30,8 +32,7 @@ public class Ticket {
 		}
 
 //		Idoso
-		Period period = Period.between(Company.currentDay, customer.getBirthDate());
-		if(period.getYears() >= 60){
+		if(customer.getAge() >= 60){
 			discountPercent+= 0.05;
 		}
 

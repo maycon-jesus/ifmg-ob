@@ -23,4 +23,9 @@ public class Company {
 		}
 		return null;
 	}
+
+	public static Ticket quotationTicket(Flight flight, Seat seat, Customer customer){
+		return new Ticket(flight, seat, customer);
+
+	}
 }

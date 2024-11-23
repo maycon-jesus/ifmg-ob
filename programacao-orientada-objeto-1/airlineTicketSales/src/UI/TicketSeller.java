@@ -12,12 +12,24 @@ class TicketSeller {
 		Customer customer = promptCustomerInfos();
 		Methods.Flight flight = promptCustomerFlightInfo();
 		Seat seat = promptCustomerSeatInfo(flight);
-		Ticket ticket = flight.quotationTicket(customer, seat);
+		Ticket ticket = Company.quotationTicket (flight, seat, customer);
 		confirmTicketQuotation(ticket);
 	}
 
 	static private boolean confirmTicketQuotation(Ticket ticket){
-		System.out.println("====[DADOS DO PEDIDO]====");
+		System.out.println("====[DADOS DO PASSAGEIRO]====");
+		System.out.println("Nome: " + ticket.customer.getName());
+		System.out.println("Data de nascimento: " + ticket.customer.getBirthDate() + "("+ticket.customer.getAge()+" anos)");
+		System.out.println("Email: " + ticket.customer.getEmail());
+		System.out.println("Endereço: " + ticket.customer.getAddress());
+		System.out.println("Possui comorbidades: " + (ticket.customer.getComorbidities()? "Sim":"Não"));
+
+		System.out.println("====[DADOS DO VOO]====");
+		System.out.println("Data: " + ticket.flight.);
+		System.out.println("Assento: " + ticket.customer.getName());
+
+
+		System.out.println("====[RESUMO DO PEDIDO]====");
 		System.out.println("Subtotal: R$ "+ticket.getSubtotal());
 		System.out.println("Descontos: R$ "+ticket.getDiscount());
 		System.out.println("Total: R$ "+ticket.getTotal());

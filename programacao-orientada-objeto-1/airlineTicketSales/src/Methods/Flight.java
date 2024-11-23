@@ -1,11 +1,14 @@
 package Methods;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Flight {
 	private final Seat[][] seats = new Seat[11][4];
+	private Day day = null;
 
-	Flight() {
+	Flight(Day day) {
+		this.day = day;
 
 //        Define os ids dos assentos. Ex. 1A, 1B, 2A.
 		for (int i = 0; i < seats.length; i++) {
@@ -64,18 +67,16 @@ public class Flight {
 		throw new CustomError("Assento inválido!");
 	}
 
-	public Ticket quotationTicket(Customer customer, Seat seat){
-		return new Ticket(this, seat, customer);
-	}
 
-	public void newTicket(Customer customer, Seat seat) throws CustomError {
-		if (customer == null) throw new CustomError("Methods.Passenger is null!");
-		if (!seat.isBlocked()) {
-			throw new CustomError("Assento bloqueado!");
-		}
-		if (!seat.isEmpty()) {
-			throw new CustomError("Assento já está ocupado!");
-		}
-		seat.setPassenger(customer);
-	}
+
+//	public void newTicket(Customer customer, Seat seat) throws CustomError {
+//		if (customer == null) throw new CustomError("Methods.Passenger is null!");
+//		if (!seat.isBlocked()) {
+//			throw new CustomError("Assento bloqueado!");
+//		}
+//		if (!seat.isEmpty()) {
+//			throw new CustomError("Assento já está ocupado!");
+//		}
+//		seat.setPassenger(customer);
+//	}
 }

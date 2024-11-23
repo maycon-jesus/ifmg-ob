@@ -1,6 +1,7 @@
 package Methods;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 
 public class Customer {
@@ -37,5 +38,19 @@ public class Customer {
 
 	void incrementFlightsCurrentMonth(){
 		flightsCurrentMonth++;
+	}
+
+	public int getAge(){
+		LocalDate now = LocalDate.now();
+		Period period = Period.between(this.birthDate, Company.currentDay);
+		return period.getYears();
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getAddress() {
+		return address;
 	}
 }
