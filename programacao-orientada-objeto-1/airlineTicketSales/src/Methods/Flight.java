@@ -1,6 +1,6 @@
 package Methods;
 
-import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Flight {
@@ -59,7 +59,9 @@ public class Flight {
 	public Seat getSeatById(String seatId) throws CustomError {
 		for (Seat[] line : seats) {
 			for (Seat seat : line) {
-				if (seat.getSeatId().equals(seatId)) {
+				if (seat.getSeatId().equals(seatId) && seat.isBlocked()) {
+					throw new CustomError("Assento inválido!");
+				} else if (seat.getSeatId().equals(seatId)) {
 					return seat;
 				}
 			}
@@ -67,9 +69,26 @@ public class Flight {
 		throw new CustomError("Assento inválido!");
 	}
 
+	public String getDate() {
+		return day.getDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+	}
 
+	public Day getDay() {
+		return day;
+	}
 
-//	public void newTicket(Customer customer, Seat seat) throws CustomError {
+	public boolean customerAlreadyHasTicket(Customer customer) {
+		for (Seat[] line : seats) {
+			for (Seat seat : line) {
+				if (seat.getPassenger() != null && seat.getPassenger().equals(customer)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	//	public void newTicket(Customer customer, Seat seat) throws CustomError {
 //		if (customer == null) throw new CustomError("Methods.Passenger is null!");
 //		if (!seat.isBlocked()) {
 //			throw new CustomError("Assento bloqueado!");

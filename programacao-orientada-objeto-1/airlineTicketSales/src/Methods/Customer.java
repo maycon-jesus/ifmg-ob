@@ -2,7 +2,6 @@ package Methods;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.ArrayList;
 
 public class Customer {
 	private String name;
@@ -32,15 +31,24 @@ public class Customer {
 		return birthDate;
 	}
 
+	public boolean isBirthDay() {
+		int currentDay = Company.currentDay.getDayOfMonth();
+		int currentMonth = Company.currentDay.getMonthValue();
+
+		int customerBirthDay = getBirthDate().getDayOfMonth();
+		int customerBirthMonth = getBirthDate().getMonthValue();
+		return currentDay == customerBirthDay && currentMonth == customerBirthMonth;
+	}
+
 	public int getFlightsCurrentMonth() {
 		return flightsCurrentMonth;
 	}
 
-	void incrementFlightsCurrentMonth(){
+	void incrementFlightsCurrentMonth() {
 		flightsCurrentMonth++;
 	}
 
-	public int getAge(){
+	public int getAge() {
 		LocalDate now = LocalDate.now();
 		Period period = Period.between(this.birthDate, Company.currentDay);
 		return period.getYears();

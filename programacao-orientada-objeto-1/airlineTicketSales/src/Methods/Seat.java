@@ -5,6 +5,7 @@ public class Seat {
 	private Customer customer;
 	private Boolean useBlocked;
 	private double originalPrice;
+	private long buyedTimestamp = 0;
 
 	Seat(String seatId, Boolean useBlocked, double originalPrice) {
 		this.seatId = seatId;
@@ -33,10 +34,15 @@ public class Seat {
 			return false;
 		}
 		this.customer = customer;
+		this.buyedTimestamp = System.currentTimeMillis();
 		return true;
 	}
 
 	public double getOriginalPrice() {
 		return originalPrice;
+	}
+
+	public long getBuyedTimestamp() {
+		return buyedTimestamp;
 	}
 }
