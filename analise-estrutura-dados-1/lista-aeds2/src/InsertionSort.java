@@ -21,6 +21,7 @@ public class InsertionSort {
 			alreadyOrdenedIndex++;
 		}
 
+		resp.setFinalVector(vetor);
 		return resp;
 	}
 }

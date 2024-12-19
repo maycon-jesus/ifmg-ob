@@ -18,6 +18,8 @@ public class SelectionSort {
 			vector[i]=smallestValue;
 			vector[smallestIndex]=temp;
 		}
+
+		resp.setFinalVector(vector);
 		return resp;
 	}
 }
