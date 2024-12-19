@@ -20,4 +20,8 @@ public class SortResponse {
 			System.out.println(item);
 		}
 	}
+
+	public int getInteractions(){
+		return interactions;
+	}
 }
