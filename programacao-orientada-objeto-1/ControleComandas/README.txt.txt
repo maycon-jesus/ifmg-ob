@@ -1,0 +1,1 @@
+Os arquivos gerados pelo programa estão na pasta "comandas" na raiz do projeto
