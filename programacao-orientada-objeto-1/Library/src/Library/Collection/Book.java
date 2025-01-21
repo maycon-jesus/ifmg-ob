@@ -1,25 +1,39 @@
 package Library.Collection;
 
-public class Book {
-	private String id;
+import DB.DBItem;
+
+public class Book extends DBItem {
 	private String titulo;
 	private int quantidade;
+	private int availableQuantity;
 
-	public Book(String id, String titulo, int quantidade) {
-		this.id = id;
+	public Book(int id, String titulo, int quantidade) {
+		super(id);
 		this.titulo = titulo;
 		this.quantidade = quantidade;
+		this.availableQuantity = quantidade;
 	}
 
-	public String getId() {
-		return id;
+	public Book(int id, String titulo, int quantidade, int availableQuantity) {
+		super(id);
+		this.titulo = titulo;
+		this.quantidade = quantidade;
+		this.availableQuantity = availableQuantity;
 	}
 
 	public String getTitulo() {
 		return titulo;
 	}
 
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
 	public int getQuantidade() {
 		return quantidade;
+	}
+
+	public int getAvailableQuantity() {
+		return availableQuantity;
 	}
 }
