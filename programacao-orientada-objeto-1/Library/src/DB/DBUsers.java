@@ -42,14 +42,44 @@ public class DBUsers extends DBManagerv2<User> {
 
     @Override
     String instanceToStringData(User data) {
+
         switch (data.getUserType()) {
             case STUDENT -> {
                 Student student = (Student) data;
-                return student.getId() + "," + student.getName() + "," + student.getEmail() + "," + student.getPassword() + ","
-                        + student.getUserType() + ",," + student.getRegistration() + "," + student.getCourse() + ",,";
+                return student.getId() + ","
+                        + student.getName() + ","
+                        + student.getEmail() + ","
+                        + student.getPassword() + ","
+                        + student.getUserType() + ",,"
+                        + student.getRegistration() + ","
+                        + student.getCourse() + ",,";
             }
+            case TEACHER -> {
+                Teacher teacher = (Teacher) data;
+                // cellphone vazio"" + "," +                // registration vazio
+                return teacher.getId() + "," +
+                        teacher.getName() + "," +
+                        teacher.getEmail() + "," +
+                        teacher.getPassword() + "," +
+                        teacher.getUserType() + "," + "," + "," +
+                        teacher.getDepartment() + ",";
 
-            // id,name,email,password,userType,cellphone,registration,course,department,totalReturns
+
+            }
+            case LIBRARIAN -> {
+                Librarian librarian = (Librarian) data;
+                // registration vazio
+                // course vazio
+
+                return librarian.getId() + "," +
+                        librarian.getName() + "," +
+                        librarian.getEmail() + "," +
+                        librarian.getPassword() + "," +
+                        librarian.getUserType() + "," +
+                        librarian.getCellphone() + "," + "," + "," + "," +
+                        librarian.getTotalReturns();
+            }
+            default -> throw new RuntimeException("UserType inválido!!!");
         }
         return "";
 
