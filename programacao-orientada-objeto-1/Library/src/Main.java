@@ -30,19 +30,54 @@ public class Main {
 			System.out.println("3 - Registrar devolução");
 			System.out.println("5 - Relatório de obras emprestadas");
 			System.out.println("6 - Relatório de usuários com atrasos");
+			System.out.println("7 - Registrar um aluno");
+			System.out.println("8 - Registrar um professor");
+			System.out.println("9 - Registrar um bibliotecário");
 		}
 
 		System.out.println("0 - Logout");
-		int optionSelected = Input.inputMenu(0, 6);
+		int optionSelected = Input.inputMenu(0, 9);
+		switch (optionSelected) {
+			case 1:
+				Prompts.getBookInfo();
+				break;
+			case 7: {
+				if (!(userLogged instanceof Librarian)) {
+					System.out.println("Opção inválida!");
+					break;
+				}
+				Prompts.registerStudent();
+				break;
+			}
+			case 8: {
+				if (!(userLogged instanceof Librarian)) {
+					System.out.println("Opção inválida!");
+					break;
+				}
+				Prompts.registerTeatcher();
+				break;
+			}
+			case 9: {
+				if (!(userLogged instanceof Librarian)) {
+					System.out.println("Opção inválida!");
+					break;
+				}
+				Prompts.registerLibrarian();
+				break;
+			}
+		}
 
+		if (optionSelected != 0) {
+			appMenu();
+		}
 	}
 
 	public static void main(String[] args) {
 
-
-		while (true) {
-			loginMenu();
-		}
+		Prompts.registerStudent();
+		// while (true) {
+		//	loginMenu();
+		// }
 
 	}
 }

@@ -1,19 +1,28 @@
 package Library.Collection;
 
-import DB.DBGlobal;
 import DB.DBItem;
 
 public class Loan extends DBItem {
-	LoanStatus status;
-	Book book;
+	private LoanStatus status;
+	private int bookId;
+	private int userId;
 
-	public Loan(int id, LoanStatus status, int bookId) {
+	public Loan(int id, LoanStatus status, int bookId, int userId) {
 		super(id);
 		this.status = status;
-		this.book = DBGlobal.books.getBookById(bookId);
+		this.bookId = bookId;
+		this.userId = userId;
 	}
 
 	public LoanStatus getStatus() {
 		return status;
+	}
+
+	public int getBookId() {
+		return bookId;
+	}
+
+	public int getUserId() {
+		return userId;
 	}
 }

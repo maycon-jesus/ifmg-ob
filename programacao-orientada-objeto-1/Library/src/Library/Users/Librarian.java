@@ -9,4 +9,12 @@ public class Librarian extends User {
 		this.cellphone = cellphone;
 		this.totalReturns = totalReturns;
 	}
+
+	public String getCellphone() {
+		return cellphone;
+	}
+
+	public int getTotalReturns() {
+		return totalReturns;
+	}
 }

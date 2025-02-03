@@ -7,4 +7,8 @@ public class Teacher extends User {
 		super(id, name, email, password, userType);
 		this.department = department;
 	}
+
+	public String getDepartment() {
+		return department;
+	}
 }
