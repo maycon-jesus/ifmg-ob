@@ -1,5 +1,5 @@
+import Library.Prompts;
 import Library.Users.Librarian;
-import Library.Users.Prompt;
 import Library.Users.Student;
 import Library.Users.User;
 import Utils.Input;
@@ -13,7 +13,7 @@ public class Main {
 		System.out.println("0  - Sair");
 		int optionSelected = Input.inputMenu(0, 1);
 		if (optionSelected == 1) {
-			Main.userLogged = Prompt.Login();
+			Main.userLogged = Prompts.Login();
 			appMenu();
 			userLogged = null;
 		} else {
