@@ -2,9 +2,14 @@ package Library;
 
 import DB.DBGlobal;
 import Library.Collection.Book;
+import Library.Collection.Loan;
+import Library.Collection.LoanStatus;
+import Library.Users.Student;
+import Library.Users.Teacher;
 import Library.Users.User;
 import Library.Users.UserType;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Prompts {
@@ -97,7 +102,7 @@ public class Prompts {
 		System.out.println("Digite o departamento: ");
 		String department = sc.nextLine();
 
-		DBGlobal.users.newTeatcher(name, email, password, UserType.STUDENT, department, course);
+		DBGlobal.users.newTeatcher(name, email, password, UserType.STUDENT, department);
 	}
 
 	public static void registerLibrarian() {
@@ -119,12 +124,20 @@ public class Prompts {
 		DBGlobal.users.newLibrarian(name, email, password, UserType.LIBRARIAN, cellphone, 0);
 	}
 
-	public static void loan(User user) {
+	public static void loanBook(User user) {
 		Book book = promptBook();
 		if (book.getAvailableQuantity() <= 0) {
 			System.out.println("Este livro não possui nenhuma cópia disponível!!!");
 			return;
 		}
-		DBGlobal.loans.registerLoan();
+		ArrayList<Loan> loans = DBGlobal.loans.getLoansByUserAndStatus(user, LoanStatus.BORROWED);
+		if (user instanceof Teacher && loans.size() >= 10) {
+			System.out.println("Não foi possível concluir o emprestimo pois você atingiu o limite de 10 emprestimos!!!");
+		}
+		if (user instanceof Student && loans.size() >= 2) {
+			System.out.println("Não foi possível concluir o emprestimo pois você atingiu o limite de 2 emprestimos!!!");
+		}
+
+		DBGlobal.loans.registerLoan(book.getId(), user.getId());
 	}
 }

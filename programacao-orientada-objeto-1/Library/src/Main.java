@@ -1,6 +1,7 @@
 import Library.Prompts;
 import Library.Users.Librarian;
 import Library.Users.Student;
+import Library.Users.Teacher;
 import Library.Users.User;
 import Utils.Input;
 
@@ -25,7 +26,8 @@ public class Main {
 	public static void appMenu() {
 		System.out.println("Selecione uma opção:");
 		System.out.println("1 - Consultar informações de uma obra");
-		if (userLogged instanceof Student) System.out.println("2 - Pegar obra emprestada");
+		if (userLogged instanceof Student || userLogged instanceof Teacher)
+			System.out.println("2 - Pegar obra emprestada");
 		if (userLogged instanceof Librarian) {
 			System.out.println("3 - Registrar devolução");
 			System.out.println("5 - Relatório de obras emprestadas");
@@ -41,6 +43,14 @@ public class Main {
 			case 1:
 				Prompts.getBookInfo();
 				break;
+			case 2: {
+				if (userLogged instanceof Librarian) {
+					System.out.println("Opção inválida!");
+					break;
+				}
+				Prompts.loanBook(userLogged);
+				break;
+			}
 			case 7: {
 				if (!(userLogged instanceof Librarian)) {
 					System.out.println("Opção inválida!");
@@ -74,10 +84,9 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Prompts.registerStudent();
-		// while (true) {
-		//	loginMenu();
-		// }
+		while (true) {
+			loginMenu();
+		}
 
 	}
 }

@@ -20,10 +20,10 @@ public class DBUsers extends DBManagerv2<User> {
 		String registration = dataArr[6];
 		String course = dataArr[7];
 		String department = dataArr[8];
-		int totalReturns = Integer.parseInt(dataArr[9]);
 
 		switch (userType) {
 			case LIBRARIAN -> {
+				int totalReturns = Integer.parseInt(dataArr[9]);
 				return new Librarian(id, name, email, password, userType, cellphone, totalReturns);
 			}
 			case TEACHER -> {
@@ -50,9 +50,9 @@ public class DBUsers extends DBManagerv2<User> {
 						+ student.getName() + ","
 						+ student.getEmail() + ","
 						+ student.getPassword() + ","
-						+ student.getUserType() + ",,"
+						+ student.getUserType() + ",null,"
 						+ student.getRegistration() + ","
-						+ student.getCourse() + ",,";
+						+ student.getCourse() + ",null,null";
 			}
 			case TEACHER -> {
 				Teacher teacher = (Teacher) data;
@@ -61,8 +61,8 @@ public class DBUsers extends DBManagerv2<User> {
 						teacher.getName() + "," +
 						teacher.getEmail() + "," +
 						teacher.getPassword() + "," +
-						teacher.getUserType() + "," + "," + "," +
-						teacher.getDepartment() + ",";
+						teacher.getUserType() + ",null,null," +
+						teacher.getDepartment() + ",null";
 
 
 			}
@@ -76,7 +76,7 @@ public class DBUsers extends DBManagerv2<User> {
 						librarian.getEmail() + "," +
 						librarian.getPassword() + "," +
 						librarian.getUserType() + "," +
-						librarian.getCellphone() + "," + "," + "," + "," +
+						librarian.getCellphone() + ",null,null,null," +
 						librarian.getTotalReturns();
 			}
 			default -> throw new RuntimeException("UserType inválido!!!");
@@ -85,10 +85,8 @@ public class DBUsers extends DBManagerv2<User> {
 	}
 
 	public User getUserByMail(String email) {
-
 		for (User user : items) {
 			if (user.getEmail().equals(email)) {
-
 				return user;
 			}
 		}
@@ -99,8 +97,7 @@ public class DBUsers extends DBManagerv2<User> {
 	public Student newStudents(String name, String email, String password, UserType userType, String registration, String course) {
 		int id = this.getNextItemId();
 		Student student = new Student(id, name, email, password, userType, registration, course);
-		this.items.add(student);
-		this.onUpdateData(student);
+		this.insertData(student);
 		return student;
 
 	}
@@ -108,16 +105,14 @@ public class DBUsers extends DBManagerv2<User> {
 	public Teacher newTeatcher(String name, String email, String password, UserType userType, String department) {
 		int id = this.getNextItemId();
 		Teacher teacher = new Teacher(id, name, email, password, userType, department);
-		this.items.add(teacher);
-		this.onUpdateData(teacher);
+		this.insertData(teacher);
 		return teacher;
 	}
 
 	public Librarian newLibrarian(String name, String email, String password, UserType userType, String cellphone, int totalReturns) {
 		int id = this.getNextItemId();
 		Librarian librarian = new Librarian(id, name, email, password, userType, cellphone, totalReturns);
-		this.items.add(librarian);
-		this.onUpdateData(librarian);
+		this.insertData(librarian);
 		return librarian;
 	}
 }

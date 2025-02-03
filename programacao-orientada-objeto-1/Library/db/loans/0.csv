@@ -1,0 +1,4 @@
+id,status,bookId,userId
+1,BORROWED,5000,2
+1,BORROWED,5000,2
+2,BORROWED,5000,2
