@@ -9,6 +9,7 @@ public class Main {
 	private static User userLogged = null;
 
 	public static void loginMenu() {
+		System.out.println("BIBLIOTECA IFMG OB");
 		System.out.println("Selecione uma opção:");
 		System.out.println("1 - Entrar no sistema");
 		System.out.println("0  - Sair");
@@ -24,6 +25,7 @@ public class Main {
 	}
 
 	public static void appMenu() {
+		System.out.println("Bem vindo " + userLogged.getName());
 		System.out.println("Selecione uma opção:");
 		System.out.println("1 - Consultar informações de uma obra");
 		if (userLogged instanceof Student || userLogged instanceof Teacher)
@@ -59,7 +61,15 @@ public class Main {
 				}
 				break;
 			}
-			case 4, 5: {
+			case 4: {
+				if (userLogged instanceof Librarian) {
+					Prompts.reportAllLoans();
+				} else {
+					System.out.println("Opção inválida!");
+				}
+				break;
+			}
+			case 5: {
 				if (userLogged instanceof Librarian) {
 					Prompts.reportLoans();
 				} else {

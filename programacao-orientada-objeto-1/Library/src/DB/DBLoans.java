@@ -60,4 +60,8 @@ public class DBLoans extends DBManagerv2<Loan> {
 		}
 		return loans;
 	}
+
+	public ArrayList<Loan> getLoans() {
+		return this.items;
+	}
 }

@@ -101,6 +101,7 @@ public class Prompts {
 		String course = sc.nextLine();
 
 		DBGlobal.users.newStudents(name, email, password, UserType.STUDENT, registration, course);
+		System.out.println("Estudante cadastrado com sucesso!");
 	}
 
 	public static void registerTeacher() {
@@ -119,6 +120,7 @@ public class Prompts {
 		String department = sc.nextLine();
 
 		DBGlobal.users.newTeacher(name, email, password, UserType.STUDENT, department);
+		System.out.println("Professor cadastrado com sucesso!");
 	}
 
 	public static void registerLibrarian() {
@@ -138,6 +140,7 @@ public class Prompts {
 
 
 		DBGlobal.users.newLibrarian(name, email, password, UserType.LIBRARIAN, cellphone, 0);
+		System.out.println("Bibliotecario cadastrado com sucesso!");
 	}
 
 	public static Loan promptLoanByUser(User user, String msg) {
@@ -170,6 +173,7 @@ public class Prompts {
 		}
 
 		DBGlobal.loans.registerLoan(book.getId(), user.getId());
+		System.out.println("Obra emprestada com sucesso!");
 	}
 
 	public static void returnLoan(Librarian librarian) {
@@ -183,6 +187,7 @@ public class Prompts {
 		loan.setReturned();
 		DBGlobal.users.onUpdateData(librarian);
 		DBGlobal.loans.onUpdateData(loan);
+		System.out.println("Obra devolvida com sucesso!");
 	}
 
 	public static void reportLoans() {
@@ -210,6 +215,40 @@ public class Prompts {
 			bufferedWriter.flush();
 			bufferedWriter.close();
 			writter.close();
+			System.out.println("Relatorio gerado em " + file.getAbsolutePath());
+		} catch (IOException err) {
+			System.out.println("Erro ao gerar relatorio!!!");
+		}
+	}
+
+	public static void reportAllLoans() {
+		ArrayList<Loan> loans = DBGlobal.loans.getLoans();
+		File file = new File("allloans-report.txt");
+		try {
+			FileWriter writter = new FileWriter(file);
+			file.createNewFile();
+			BufferedWriter bufferedWriter = new BufferedWriter(writter);
+
+			for (Loan loan : loans) {
+				Book book = DBGlobal.books.getBookById(loan.getBookId());
+				User user = DBGlobal.users.getUserById(loan.getUserId());
+
+				bufferedWriter.write("Obra: " + book.getTitulo());
+				bufferedWriter.newLine();
+				bufferedWriter.write("Emprestado para: " + user.getName());
+				bufferedWriter.newLine();
+				bufferedWriter.write(" Email: " + user.getEmail());
+				bufferedWriter.newLine();
+				bufferedWriter.write("Status: " + loan.getStatus().toString());
+				bufferedWriter.newLine();
+				bufferedWriter.write("=================");
+				bufferedWriter.newLine();
+			}
+
+			bufferedWriter.flush();
+			bufferedWriter.close();
+			writter.close();
+			System.out.println("Relatorio gerado em " + file.getAbsolutePath());
 		} catch (IOException err) {
 			System.out.println("Erro ao gerar relatorio!!!");
 		}
