@@ -102,7 +102,7 @@ public class DBUsers extends DBManagerv2<User> {
 
 	}
 
-	public Teacher newTeatcher(String name, String email, String password, UserType userType, String department) {
+	public Teacher newTeacher(String name, String email, String password, UserType userType, String department) {
 		int id = this.getNextItemId();
 		Teacher teacher = new Teacher(id, name, email, password, userType, department);
 		this.insertData(teacher);
@@ -114,5 +114,14 @@ public class DBUsers extends DBManagerv2<User> {
 		Librarian librarian = new Librarian(id, name, email, password, userType, cellphone, totalReturns);
 		this.insertData(librarian);
 		return librarian;
+	}
+
+	public User getUserById(int id) {
+		for (User user : items) {
+			if (user.getId() == id) {
+				return user;
+			}
+		}
+		return null;
 	}
 }

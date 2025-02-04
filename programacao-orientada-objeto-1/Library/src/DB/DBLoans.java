@@ -50,4 +50,14 @@ public class DBLoans extends DBManagerv2<Loan> {
 		}
 		return loans;
 	}
+
+	public ArrayList<Loan> getLoansByStatus(LoanStatus status) {
+		ArrayList<Loan> loans = new ArrayList<>();
+		for (Loan loan : this.items) {
+			if (loan.getStatus() == status) {
+				loans.add(loan);
+			}
+		}
+		return loans;
+	}
 }

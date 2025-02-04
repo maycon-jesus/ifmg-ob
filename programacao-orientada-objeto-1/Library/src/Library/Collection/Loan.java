@@ -25,4 +25,8 @@ public class Loan extends DBItem {
 	public int getUserId() {
 		return userId;
 	}
+
+	public void setReturned() {
+		this.status = LoanStatus.RETURNED;
+	}
 }

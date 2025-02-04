@@ -30,11 +30,11 @@ public class Main {
 			System.out.println("2 - Pegar obra emprestada");
 		if (userLogged instanceof Librarian) {
 			System.out.println("3 - Registrar devolução");
-			System.out.println("5 - Relatório de obras emprestadas");
-			System.out.println("6 - Relatório de usuários com atrasos");
-			System.out.println("7 - Registrar um aluno");
-			System.out.println("8 - Registrar um professor");
-			System.out.println("9 - Registrar um bibliotecário");
+			System.out.println("4 - Relatório de obras emprestadas");
+			System.out.println("5 - Relatório de usuários com atrasos");
+			System.out.println("6 - Registrar um aluno");
+			System.out.println("7 - Registrar um professor");
+			System.out.println("8 - Registrar um bibliotecário");
 		}
 
 		System.out.println("0 - Logout");
@@ -51,7 +51,23 @@ public class Main {
 				Prompts.loanBook(userLogged);
 				break;
 			}
-			case 7: {
+			case 3: {
+				if (userLogged instanceof Librarian) {
+					Prompts.returnLoan((Librarian) userLogged);
+				} else {
+					System.out.println("Opção inválida!");
+				}
+				break;
+			}
+			case 4, 5: {
+				if (userLogged instanceof Librarian) {
+					Prompts.reportLoans();
+				} else {
+					System.out.println("Opção inválida!");
+				}
+				break;
+			}
+			case 6: {
 				if (!(userLogged instanceof Librarian)) {
 					System.out.println("Opção inválida!");
 					break;
@@ -59,15 +75,15 @@ public class Main {
 				Prompts.registerStudent();
 				break;
 			}
-			case 8: {
+			case 7: {
 				if (!(userLogged instanceof Librarian)) {
 					System.out.println("Opção inválida!");
 					break;
 				}
-				Prompts.registerTeatcher();
+				Prompts.registerTeacher();
 				break;
 			}
-			case 9: {
+			case 8: {
 				if (!(userLogged instanceof Librarian)) {
 					System.out.println("Opção inválida!");
 					break;

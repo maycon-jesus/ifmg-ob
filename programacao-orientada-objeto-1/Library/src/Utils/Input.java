@@ -13,4 +13,9 @@ public class Input {
 		}
 		return value;
 	}
+
+	public static String inputString() {
+		String value = scanner.next();
+		return value;
+	}
 }

@@ -17,4 +17,8 @@ public class Librarian extends User {
 	public int getTotalReturns() {
 		return totalReturns;
 	}
+
+	public void incrementTotalReturns() {
+		totalReturns++;
+	}
 }

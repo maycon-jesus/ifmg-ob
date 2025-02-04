@@ -4,11 +4,13 @@ import DB.DBGlobal;
 import Library.Collection.Book;
 import Library.Collection.Loan;
 import Library.Collection.LoanStatus;
-import Library.Users.Student;
-import Library.Users.Teacher;
-import Library.Users.User;
-import Library.Users.UserType;
+import Library.Users.*;
+import Utils.Input;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -56,6 +58,20 @@ public class Prompts {
 		return promptBook();
 	}
 
+	static public User promptUserByEmail() {
+		User user = null;
+		while (user == null) {
+			System.out.println("Digite o email do aluno/professor:");
+			String email = Input.inputString();
+			user = DBGlobal.users.getUserByMail(email);
+			if (user == null) {
+				continue;
+			}
+			if (user instanceof Librarian) user = null;
+		}
+		return user;
+	}
+
 	static public void getBookInfo() {
 		System.out.println("Digite o nome do Livro: ");
 		Book book = promptBook();
@@ -87,7 +103,7 @@ public class Prompts {
 		DBGlobal.users.newStudents(name, email, password, UserType.STUDENT, registration, course);
 	}
 
-	public static void registerTeatcher() {
+	public static void registerTeacher() {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Digite o nome do professor: ");
@@ -102,7 +118,7 @@ public class Prompts {
 		System.out.println("Digite o departamento: ");
 		String department = sc.nextLine();
 
-		DBGlobal.users.newTeatcher(name, email, password, UserType.STUDENT, department);
+		DBGlobal.users.newTeacher(name, email, password, UserType.STUDENT, department);
 	}
 
 	public static void registerLibrarian() {
@@ -124,6 +140,19 @@ public class Prompts {
 		DBGlobal.users.newLibrarian(name, email, password, UserType.LIBRARIAN, cellphone, 0);
 	}
 
+	public static Loan promptLoanByUser(User user, String msg) {
+		ArrayList<Loan> loans = DBGlobal.loans.getLoansByUserAndStatus(user, LoanStatus.BORROWED);
+		if (loans.size() == 0) return null;
+		for (int i = 0; i < loans.size(); i++) {
+			Loan loan = loans.get(i);
+			Book book = DBGlobal.books.getBookById(loan.getBookId());
+			System.out.println(i + " - " + book.getId() + " - " + book.getTitulo());
+		}
+		System.out.println(msg);
+		int option = Input.inputMenu(0, loans.size());
+		return loans.get(option);
+	}
+
 	public static void loanBook(User user) {
 		Book book = promptBook();
 		if (book.getAvailableQuantity() <= 0) {
@@ -133,11 +162,56 @@ public class Prompts {
 		ArrayList<Loan> loans = DBGlobal.loans.getLoansByUserAndStatus(user, LoanStatus.BORROWED);
 		if (user instanceof Teacher && loans.size() >= 10) {
 			System.out.println("Não foi possível concluir o emprestimo pois você atingiu o limite de 10 emprestimos!!!");
+			return;
 		}
 		if (user instanceof Student && loans.size() >= 2) {
 			System.out.println("Não foi possível concluir o emprestimo pois você atingiu o limite de 2 emprestimos!!!");
+			return;
 		}
 
 		DBGlobal.loans.registerLoan(book.getId(), user.getId());
+	}
+
+	public static void returnLoan(Librarian librarian) {
+		User user = promptUserByEmail();
+		Loan loan = promptLoanByUser(user, "Qual livro você deseja devolver?");
+		if (loan == null) {
+			System.out.println("Este usuário não possui nenhuma obra emprestada!!!");
+			return;
+		}
+		librarian.incrementTotalReturns();
+		loan.setReturned();
+		DBGlobal.users.onUpdateData(librarian);
+		DBGlobal.loans.onUpdateData(loan);
+	}
+
+	public static void reportLoans() {
+		ArrayList<Loan> loans = DBGlobal.loans.getLoansByStatus(LoanStatus.BORROWED);
+		File file = new File("loans-report.txt");
+		try {
+			FileWriter writter = new FileWriter(file);
+			file.createNewFile();
+			BufferedWriter bufferedWriter = new BufferedWriter(writter);
+
+			for (Loan loan : loans) {
+				Book book = DBGlobal.books.getBookById(loan.getBookId());
+				User user = DBGlobal.users.getUserById(loan.getUserId());
+
+				bufferedWriter.write("Obra: " + book.getTitulo());
+				bufferedWriter.newLine();
+				bufferedWriter.write("Emprestado para: " + user.getName());
+				bufferedWriter.newLine();
+				bufferedWriter.write(" Email: " + user.getEmail());
+				bufferedWriter.newLine();
+				bufferedWriter.write("=================");
+				bufferedWriter.newLine();
+			}
+
+			bufferedWriter.flush();
+			bufferedWriter.close();
+			writter.close();
+		} catch (IOException err) {
+			System.out.println("Erro ao gerar relatorio!!!");
+		}
 	}
 }
