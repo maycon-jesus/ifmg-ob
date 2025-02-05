@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2c2a5ce-6a55-4f77-89be-c1e3935c783b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto-pratico.iml" beforeDir="false" afterPath="$PROJECT_DIR$/projeto-pratico.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SortMethods/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortMethods/InsertionSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SortMethods/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortMethods/MergeSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SortMethods/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortMethods/SelectionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SortMethods/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SortMethods/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ArrGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ArrGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacao-orientada-objeto-1/ControleComandas.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +73,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.153" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.153" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
       </set>
     </attachedChunks>
   </component>
@@ -107,6 +103,12 @@
       <workItem from="1738102729083" duration="2323000" />
       <workItem from="1738105106619" duration="196000" />
       <workItem from="1738105318767" duration="768000" />
+      <workItem from="1738189503662" duration="3689000" />
+      <workItem from="1738195503575" duration="2865000" />
+      <workItem from="1738198411615" duration="1282000" />
+      <workItem from="1738369660324" duration="55000" />
+      <workItem from="1738776858425" duration="417000" />
+      <workItem from="1738777335802" duration="4451000" />
     </task>
     <servers />
   </component>

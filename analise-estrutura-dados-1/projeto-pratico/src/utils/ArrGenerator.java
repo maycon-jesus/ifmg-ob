@@ -16,16 +16,18 @@ public class ArrGenerator {
 	public static int[] ascNumbers(int qnt) {
 		int[] arr = new int[qnt];
 		for (int i = 0; i < qnt; i++) {
-			arr[i] = i * 1000000000;
+			arr[i] = i;
 		}
 		return arr;
 	}
 
 	public static int[] descNumbers(int qnt) {
 		int[] arr = new int[qnt];
-		for (int i = qnt - 1; i >= 0; i--) {
-			arr[i] = i * 1000000000;
+		for (int i = 0; i < qnt; i++) {
+			arr[i] = (qnt - 1 - i);
 		}
 		return arr;
 	}
+
+
 }

@@ -2,6 +2,7 @@
   <configuration default="false" name="Run" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="Main" />
     <module name="projeto-pratico" />
+    <option name="PROGRAM_PARAMETERS" value="-Xss1024m" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

@@ -1,26 +1,35 @@
 package SortMethods;
 
+import java.util.Stack;
+
 public class QuickSort extends SortBase {
 	@Override
 	public SortResponse sort(int[] _vetor) {
 		SortResponse resp = new SortResponse();
 		int[] vetor = _vetor.clone();
 		resp.startTimer();
-		quickSort(vetor, 0, _vetor.length - 1);
+		iterativeQuickSort(vetor, 0, _vetor.length - 1);
 		resp.endTimer();
 		return resp;
 	}
 
-	private void quickSort(int[] vetor, int inicio, int fim) {
-		if (inicio < fim) {
-			int posicaoPivo = separar(vetor, inicio, fim);
-			quickSort(vetor, inicio, posicaoPivo - 1);
-			quickSort(vetor, posicaoPivo + 1, fim);
+	private void iterativeQuickSort(int[] vetor, int inicio, int fim) {
+		Stack<int[]> stack = new Stack<>();
+		stack.push(new int[]{inicio, fim});
+
+		while (!stack.isEmpty()) {
+			int[] range = stack.pop();
+			int low = range[0], high = range[1];
+			if (low < high) {
+				int posicaoPivo = separar(vetor, low, high);
+				stack.push(new int[]{low, posicaoPivo - 1});
+				stack.push(new int[]{posicaoPivo + 1, high});
+			}
 		}
 	}
 
 	private int separar(int[] vetor, int inicio, int fim) {
-		int pivo = vetor[inicio];
+		int pivo = (vetor[inicio] + vetor[fim]) / 2;
 		int i = inicio + 1, f = fim;
 		while (i <= f) {
 			if (vetor[i] <= pivo)
