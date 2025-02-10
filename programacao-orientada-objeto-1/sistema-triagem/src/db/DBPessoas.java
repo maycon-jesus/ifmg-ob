@@ -3,6 +3,8 @@ package db;
 import Usuarios.*;
 import utils.StringReplacer;
 
+import java.time.LocalDate;
+
 public class DBPessoas extends DBManager<Pessoa> {
 
 	public DBPessoas() {
@@ -19,12 +21,21 @@ public class DBPessoas extends DBManager<Pessoa> {
 			String coren = dataArr[4];
 			return new Enfermeiro(id, nome, cpf, coren);
 		} else if (userType.equals(UserType.MEDICO)) {
-			MedicoEspecialidade especialidade = MedicoEspecialidade.valueOf(dataArr[4]);
-			String consultorio = dataArr[5];
-			String crm = dataArr[6];
+			MedicoEspecialidade especialidade = MedicoEspecialidade.valueOf(dataArr[5]);
+			String consultorio = dataArr[6];
+			String crm = dataArr[7];
 			return new Medico(id, nome, cpf, especialidade, consultorio, crm);
+		} else {
+			LocalDate dataNascimento = LocalDate.parse(dataArr[8]);
+			String sexo = dataArr[9];
+			String nomeMae = dataArr[10];
+			String endereco = dataArr[11];
+			String email = dataArr[12];
+			String nacionalidade = dataArr[13];
+			String telefone = dataArr[14];
+			String cartaoDoSus = dataArr[15];
+			return new Paciente(id, nome, cpf, dataNascimento, sexo, nomeMae, endereco, email, nacionalidade, telefone, cartaoDoSus);
 		}
-		return null;
 	}
 
 	@Override
@@ -45,9 +56,13 @@ public class DBPessoas extends DBManager<Pessoa> {
 			Paciente paciente = (Paciente) data;
 			String dataNascimento = paciente.getDataNascimento().toString();
 			String sexo = paciente.getSexo();
-			
-
+			String nomeMae = paciente.getNomeMae();
+			String endereco = paciente.getEndereco();
+			String email = paciente.getEmail();
+			String nacionalidade = paciente.getNacinalidade();
+			String telefone = paciente.getTelefone();
+			String cartaoDoSus = paciente.getCartaoDoSus();
+			return StringReplacer.dbLineMaker("{0},{1},{2},{3},null,null,null,null,{4},{5},{6},{7},{8},{9},{10},{11}", new String[]{String.valueOf(id), nomeCompleto, cpf, tipoPessoa, dataNascimento, sexo, nomeMae, endereco, email, nacionalidade, telefone, cartaoDoSus});
 		}
-		return "null,null,null,null,null";
 	}
 }

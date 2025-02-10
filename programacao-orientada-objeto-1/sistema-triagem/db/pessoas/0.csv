@@ -1,4 +1,4 @@
-id, nome-completo, cpf, tipo-pessoa, coren, especialidade, consultorio, crm
-1,teste,aaaa,ENFERMEIRO,coren,null,null,null
-1,teste,aaaa,ENFERMEIRO,coren,null,null,null
-2,medico,cpf,MEDICO,null,CLINICO_GERAL,sala 1,123-4
+id, nome-completo, cpf, tipo-pessoa, coren, especialidade, consultorio, crm, dataNascimento, sexo, nomeMae, endereco, email, nacionalidade, telefone, cartaoDoSus
+1,teste,aaaa,ENFERMEIRO,coren,null,null,null,null,null,null,null,null,null,null,null
+1,medico,cpf,MEDICO,null,CLINICO_GERAL,sala 1,123-4,null,null,null,null,null,null,null,null
+2,paciente,cpf,PACIENTE,null,null,null,null,2020-12-30,m,mae,end,email,nacionalidade,tel,1234

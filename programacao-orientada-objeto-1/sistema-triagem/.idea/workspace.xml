@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8393cf4a-815b-419b-9fc0-731b4ec9e864" name="Changes" comment="Classe Paciente, teste">
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/pessoas/0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/db/pessoas/0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/pessoas/0.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Atendimento/FichaAcolhimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Atendimento/FichaAcolhimento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Usuarios/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuarios/Paciente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/db/DBPessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DBPessoas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +73,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.selected.configurable": "preferences.editor",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
