@@ -10,7 +10,7 @@ public class Paciente extends Pessoa {
    String nomeMae;
     String endereco;
     String email;
-    String nacinalidade
+    String nacinalidade;
     String telefone;
     String cartaoDoSus;
 
