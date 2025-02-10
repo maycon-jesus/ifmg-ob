@@ -1,6 +1,7 @@
 package Usuarios;
 
 import Atendimento.Ficha;
+import db.DBGlobal;
 
 public class Medico extends Pessoa implements Atender {
 	private MedicoEspecialidade especialidade;
@@ -12,6 +13,7 @@ public class Medico extends Pessoa implements Atender {
 		this.especialidade = especialidade;
 		this.consultorio = consultorio;
 		this.crm = crm;
+		DBGlobal.pessoas.insertData(this);
 	}
 
 	@Override
@@ -22,5 +24,17 @@ public class Medico extends Pessoa implements Atender {
 	@Override
 	public void finalizarAtendimento(Ficha ficha) {
 
+	}
+
+	public MedicoEspecialidade getEspecialidade() {
+		return especialidade;
+	}
+
+	public String getConsultorio() {
+		return consultorio;
+	}
+
+	public String getCrm() {
+		return crm;
 	}
 }

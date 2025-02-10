@@ -47,7 +47,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/dev-cansado/projects/ifmg-ob/analise-estrutura-dados-1/projeto-pratico&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu/home/dev-cansado/projects/ifmg-ob/programacao-orientada-objeto-1/sistema-triagem&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -107,7 +107,10 @@
       <workItem from="1738777335802" duration="4451000" />
       <workItem from="1738797354414" duration="153000" />
       <workItem from="1738797525407" duration="517000" />
-      <workItem from="1738798050268" duration="304000" />
+      <workItem from="1738798050268" duration="382000" />
+      <workItem from="1738966789164" duration="3990000" />
+      <workItem from="1738975151321" duration="10000" />
+      <workItem from="1738975235661" duration="6000" />
     </task>
     <servers />
   </component>
