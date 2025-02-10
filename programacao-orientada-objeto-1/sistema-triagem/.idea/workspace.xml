@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8393cf4a-815b-419b-9fc0-731b4ec9e864" name="Changes" comment="Classe Paciente, teste">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8393cf4a-815b-419b-9fc0-731b4ec9e864" name="Changes" comment="Classe Paciente">
+      <change afterPath="$PROJECT_DIR$/src/Atendimento/FichaAcolhimento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Atendimento/PrioridadeManchester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Usuarios/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuarios/Paciente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -85,7 +86,7 @@
       <workItem from="1738977078404" duration="517000" />
       <workItem from="1739160007552" duration="638000" />
       <workItem from="1739160685209" duration="179000" />
-      <workItem from="1739224569811" duration="1677000" />
+      <workItem from="1739224569811" duration="3421000" />
     </task>
     <task id="LOCAL-00001" summary="Classe Paciente, teste">
       <option name="closed" value="true" />
@@ -95,7 +96,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739224673145</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Classe Paciente">
+      <option name="closed" value="true" />
+      <created>1739226310570</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739226310570</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Classe Paciente">
+      <option name="closed" value="true" />
+      <created>1739226335880</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739226335880</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +120,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Classe Paciente, teste" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe Paciente, teste" />
+    <MESSAGE value="Classe Paciente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Classe Paciente" />
   </component>
 </project>
