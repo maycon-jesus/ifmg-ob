@@ -1,9 +1,6 @@
 package db;
 
-import Usuarios.Enfermeiro;
-import Usuarios.Medico;
-import Usuarios.Pessoa;
-import Usuarios.UserType;
+import Usuarios.*;
 import utils.StringReplacer;
 
 public class DBPessoas extends DBManager<Pessoa> {
@@ -20,6 +17,12 @@ public class DBPessoas extends DBManager<Pessoa> {
 		UserType userType = UserType.valueOf(dataArr[3]);
 		if (userType.equals(UserType.ENFERMEIRO)) {
 			String coren = dataArr[4];
+			return new Enfermeiro(id, nome, cpf, coren);
+		}else if(userType.equals(UserType.MEDICO)){
+			MedicoEspecialidade especialidade = MedicoEspecialidade.valueOf(dataArr[4]);
+			String consultorio = dataArr[5];
+			String crm = dataArr[6];
+			return new Medico(id, nome, cpf, especialidade, consultorio, crm);
 		}
 		return null;
 	}

@@ -9,7 +9,6 @@ public class Enfermeiro extends Pessoa implements Atender {
 	public Enfermeiro(int id, String nomeCompleto, String cpf, String coren) {
 		super(id, nomeCompleto, cpf, UserType.ENFERMEIRO);
 		this.coren = coren;
-		DBGlobal.pessoas.insertData(this);
 	}
 
 	@Override
