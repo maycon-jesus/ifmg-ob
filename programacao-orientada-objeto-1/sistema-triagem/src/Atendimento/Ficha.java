@@ -1,9 +1,11 @@
 package Atendimento;
 
+import db.DBItem;
+
 import java.time.DateTimeException;
 import java.time.LocalDateTime;
 
-public class Ficha {
+public class Ficha extends DBItem {
     int id;
     int pacienteId;
     int fichaAcolhidmentoId;

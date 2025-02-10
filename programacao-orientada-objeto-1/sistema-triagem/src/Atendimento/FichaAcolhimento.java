@@ -1,8 +1,9 @@
 package Atendimento;
 
 import Usuarios.MedicoEspecialidade;
+import db.DBItem;
 
-public class FichaAcolhimento {
+public class FichaAcolhimento extends DBItem {
     //int id;
     int enfermeiroId;
     String Sintomas;
@@ -31,10 +32,8 @@ public class FichaAcolhimento {
     MedicoEspecialidade especialidadeNecessaria;
     PrioridadeManchester prioridade;
 
-    public FichaAcolhimento(int enfermeiroId, String sintomas, String tempoDosSintomas, String doencasPreExistentes, String usoDeMedicamento, String jaFezCirurgia, String alergiaMedicamentoSubstancia, String gravida,
-                            String traumaAcidenteRecente, String historicoFamiliar, Boolean fumante, Boolean consomeAlcool, String infoDor, double temperaturaCorporal, Sring pressaoSanguinea, int frequeciaCardiaca, double frequenciaRespiratoria, int saturacaoDeOxigenio, int taxaDeGlicose, boolean consegueAndar, String sinaisDeEmergencia, String sinaisDeInfeccaoGrave, MedicoEspecialidade especialidadeNecessaria,
-                            PrioridadeManchester prioridade) {
-
+    public FichaAcolhimento(int id, int enfermeiroId, String sintomas, String tempoDosSintomas, String doencasPreExistentes, String usoDeMedicamento, String jaFezCirurgia, String alergiaMedicamentoSubstancia, String gravida, String traumaAcidenteRecente, String historicoFamiliar, Boolean fumante, Boolean consomeAlcool, String infoDor, double temperaturaCorporal, Sring pressaoSanguinea, int frequeciaCardiaca, double frequenciaRespiratoria, int saturacaoDeOxigenio, int taxaDeGlicose, boolean consegueAndar, String sinaisDeEmergencia, String sinaisDeInfeccaoGrave, MedicoEspecialidade especialidadeNecessaria, PrioridadeManchester prioridade) {
+        super(id);
         this.enfermeiroId = enfermeiroId;
         Sintomas = sintomas;
         this.tempoDosSintomas = tempoDosSintomas;
