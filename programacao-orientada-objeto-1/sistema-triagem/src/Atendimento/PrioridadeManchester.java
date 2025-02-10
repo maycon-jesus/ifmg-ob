@@ -5,6 +5,6 @@ public enum PrioridadeManchester {
     MUITO_URGENTE,
     URGENTE,
     POUCO_URGENTE,
-    NAO_URGENTE,
+    NAO_URGENTE
 
 }
