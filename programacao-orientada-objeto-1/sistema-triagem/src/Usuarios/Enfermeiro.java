@@ -1,14 +1,15 @@
 package Usuarios;
 
 import Atendimento.Ficha;
-import db.DBGlobal;
 
 public class Enfermeiro extends Pessoa implements Atender {
-	String coren;
+	private String coren;
+	private String consultorio;
 
-	public Enfermeiro(int id, String nomeCompleto, String cpf, String coren) {
+	public Enfermeiro(int id, String nomeCompleto, String cpf, String coren, String consultorio) {
 		super(id, nomeCompleto, cpf, UserType.ENFERMEIRO);
 		this.coren = coren;
+		this.consultorio = consultorio;
 	}
 
 	@Override
@@ -23,5 +24,9 @@ public class Enfermeiro extends Pessoa implements Atender {
 
 	public String getCoren() {
 		return coren;
+	}
+
+	public String getConsultorio() {
+		return consultorio;
 	}
 }

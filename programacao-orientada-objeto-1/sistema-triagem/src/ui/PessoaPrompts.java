@@ -46,7 +46,8 @@ public class PessoaPrompts {
 		String nomeCompleto = UI.promptString("Nome completo: ");
 		String cpf = UI.promptString("CPF (12345678901): ");
 		String coren = UI.promptString("Coren: ");
-		Enfermeiro enf = new Enfermeiro(DBGlobal.pessoas.getNextItemId(), nomeCompleto, cpf, coren);
+		String consultorio = UI.promptString("Consultorio: ");
+		Enfermeiro enf = new Enfermeiro(DBGlobal.pessoas.getNextItemId(), nomeCompleto, cpf, coren, consultorio);
 		DBGlobal.pessoas.insertData(enf);
 		return enf;
 	}
@@ -55,7 +56,7 @@ public class PessoaPrompts {
 		System.out.println("Criando um medico");
 		String nomeCompleto = UI.promptString("Nome completo: ");
 		String cpf = UI.promptString("CPF (12345678901): ");
-		String especialidade = UI.promptSelectString("Especialidade: ", new String[]{"Clinico Geral", "Pediatra", "Ginecolosgista"});
+		String especialidade = UI.promptSelectString("Especialidade: ", new String[]{"CLINICO_GERAL", "PEDIATRA", "GINECOLOGISTA"});
 		String consultorio = UI.promptString("Consultorio: ");
 		String crm = UI.promptString("CRM: ");
 		Medico med = new Medico(DBGlobal.pessoas.getNextItemId(), nomeCompleto, cpf, MedicoEspecialidade.valueOf(especialidade), consultorio, crm);

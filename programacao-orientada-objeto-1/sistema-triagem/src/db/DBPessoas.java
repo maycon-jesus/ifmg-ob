@@ -19,7 +19,8 @@ public class DBPessoas extends DBManager<Pessoa> {
 		UserType userType = UserType.valueOf(dataArr[3]);
 		if (userType.equals(UserType.ENFERMEIRO)) {
 			String coren = dataArr[4];
-			return new Enfermeiro(id, nome, cpf, coren);
+			String consultorio = dataArr[6];
+			return new Enfermeiro(id, nome, cpf, coren, consultorio);
 		} else if (userType.equals(UserType.MEDICO)) {
 			MedicoEspecialidade especialidade = MedicoEspecialidade.valueOf(dataArr[5]);
 			String consultorio = dataArr[6];
@@ -46,7 +47,8 @@ public class DBPessoas extends DBManager<Pessoa> {
 		String tipoPessoa = data.getTipoPessoa().toString();
 		if (data instanceof Enfermeiro enfermeiro) {
 			String coren = enfermeiro.getCoren();
-			return StringReplacer.dbLineMaker("{0},{1},{2},{3},{4},null,null,null,null,null,null,null,null,null,null,null", new String[]{String.valueOf(id), nomeCompleto, cpf, tipoPessoa, coren});
+			String consultorio = enfermeiro.getConsultorio();
+			return StringReplacer.dbLineMaker("{0},{1},{2},{3},{4},null,{5},null,null,null,null,null,null,null,null,null", new String[]{String.valueOf(id), nomeCompleto, cpf, tipoPessoa, coren, consultorio});
 		} else if (data instanceof Medico medico) {
 			String especialidade = medico.getEspecialidade().toString();
 			String consultorio = medico.getConsultorio();

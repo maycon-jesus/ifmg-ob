@@ -7,8 +7,8 @@ public class UI {
 	public static Scanner sc = new Scanner(System.in);
 
 	public static boolean promptBoolean(String prompt) {
-		System.out.print(prompt + " (s/n)");
-		String s = sc.next();
+		System.out.println(prompt + " (s/n)");
+		String s = sc.nextLine();
 		if (s.equals("s")) {
 			return true;
 		} else if (s.equals("n")) {
@@ -19,31 +19,34 @@ public class UI {
 	}
 
 	public static LocalDate promptLocalDate(String prompt) {
-		System.out.print(prompt + " (dd/mm/yyyy)");
-		String s = sc.next();
+		System.out.println(prompt + " (dd/mm/yyyy)");
+		String s = sc.nextLine();
 		String[] splitted = s.split("/");
 		LocalDate localDate = LocalDate.of(Integer.parseInt(splitted[3]), Integer.parseInt(splitted[2]), Integer.parseInt(splitted[1]));
 		return localDate;
 	}
 
 	public static String promptString(String prompt) {
-		System.out.print(prompt);
-		String s = sc.next();
+		System.out.println(prompt);
+		String s = sc.nextLine();
+		if (s.isEmpty()) {
+			return promptString(prompt);
+		}
 		return s;
 	}
 
 	public static String promptSelectString(String prompt, String[] options) {
-		System.out.print(prompt);
+		System.out.println(prompt);
 		for (int i = 0; i < options.length; i++) {
-			System.out.print(i + " " + options[i]);
+			System.out.println(i + " " + options[i]);
 		}
 		int s = sc.nextInt();
-		if (s > 0 && s < options.length) return options[s];
+		if (s >= 0 && s < options.length) return options[s];
 		return promptSelectString(prompt, options);
 	}
 
 	public static int promptIntFromRange(String prompt, int min, int max) {
-		System.out.print(prompt);
+		System.out.println(prompt);
 		int s = sc.nextInt();
 		if (s >= 0 && s <= min) return min;
 		return promptIntFromRange(prompt, min, max);
