@@ -65,4 +65,24 @@ public class DBPessoas extends DBManager<Pessoa> {
 			return StringReplacer.dbLineMaker("{0},{1},{2},{3},null,null,null,null,{4},{5},{6},{7},{8},{9},{10},{11}", new String[]{String.valueOf(id), nomeCompleto, cpf, tipoPessoa, dataNascimento, sexo, nomeMae, endereco, email, nacionalidade, telefone, cartaoDoSus});
 		}
 	}
+
+	public Paciente getPacienteById(int id) {
+		for (Pessoa pessoa : items) {
+			if (!pessoa.getTipoPessoa().equals(UserType.PACIENTE)) continue;
+			if (pessoa.getId() == id) {
+				return (Paciente) pessoa;
+			}
+		}
+		return null;
+	}
+
+	public Paciente getPacienteByCpf(String cpf) {
+		for (Pessoa pessoa : items) {
+			if (!pessoa.getTipoPessoa().equals(UserType.PACIENTE)) continue;
+			if (pessoa.getCpf().equals(cpf)) {
+				return (Paciente) pessoa;
+			}
+		}
+		return null;
+	}
 }
