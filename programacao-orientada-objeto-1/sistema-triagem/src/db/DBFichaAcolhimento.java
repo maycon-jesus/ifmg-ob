@@ -35,10 +35,14 @@ public class DBFichaAcolhimento extends DBManager<FichaAcolhimento> {
         boolean consegueAndar = dataArr[20].equals("1");
         String sinaisDeEmergencia = dataArr[21];
         String sinaisDeInfeccaoGrave = dataArr[22];
-        MedicoEspecialidade especialidadeNecessaria = MedicoEspecialidade.valueOf(dataArr[22]);
-        PrioridadeManchester prioridade = PrioridadeManchester.valueOf(dataArr[23]);
+        MedicoEspecialidade especialidadeNecessaria = MedicoEspecialidade.valueOf(dataArr[23]);
+        PrioridadeManchester prioridade = PrioridadeManchester.valueOf(dataArr[24]);
 
-        FichaAcolhimento fichaacolhimento = new FichaAcolhimento ()
+        FichaAcolhimento fichaacolhimento = new FichaAcolhimento (
+                                                                  id,enfermeiroId,sintomas,tempoDosSintomas,doencasPreExistentes,
+                                                                  usoDeMedicamento, jaFezCirurgia, alergiaMedicamentoSubstancia,
+                                                                  gravida,traumaAcidenteRecente,historicoFamiliar,fumante,consomeAlcool,
+                                                                 );
 
 
 
