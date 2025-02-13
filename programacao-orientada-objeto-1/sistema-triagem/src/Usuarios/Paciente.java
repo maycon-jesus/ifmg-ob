@@ -1,9 +1,11 @@
 package Usuarios;
 
 
+import utils.PrintData;
+
 import java.time.LocalDate;
 
-public class Paciente extends Pessoa {
+public class Paciente extends Pessoa implements PrintData {
 
 	LocalDate dataNascimento;
 	String sexo;
@@ -56,5 +58,19 @@ public class Paciente extends Pessoa {
 
 	public String getCartaoDoSus() {
 		return cartaoDoSus;
+	}
+
+	@Override
+	public void printData() {
+		System.out.println("Nome: " + getNomeCompleto());
+		System.out.println("CPF: " + getCpf());
+		System.out.println("Data de Nascimento: " + getDataNascimento());
+		System.out.println("Sexo: " + getSexo());
+		System.out.println("NomeMae: " + getNomeMae());
+		System.out.println("Endereco: " + getEndereco());
+		System.out.println("Email: " + getEmail());
+		System.out.println("Nacinalidade: " + getNacinalidade());
+		System.out.println("Telefone: " + getTelefone());
+		System.out.println("Cartao do Sus: " + getCartaoDoSus());
 	}
 }
