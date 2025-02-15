@@ -57,4 +57,29 @@ public class FichaAcolhimento extends DBItem {
 		this.especialidadeNecessaria = especialidadeNecessaria;
 		this.prioridade = prioridade;
 	}
+
+	public PrioridadeManchester getPrioridade() {
+		return prioridade;
+	}
+
+	public int getPrioridadeInt() {
+		switch (this.prioridade) {
+			case EMERGENCIA -> {
+				return 5;
+			}
+			case MUITO_URGENTE -> {
+				return 4;
+			}
+			case URGENTE -> {
+				return 3;
+			}
+			case POUCO_URGENTE -> {
+				return 2;
+			}
+			case NAO_URGENTE -> {
+				return 1;
+			}
+		}
+		return 0;
+	}
 }

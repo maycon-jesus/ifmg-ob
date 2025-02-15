@@ -1,12 +1,37 @@
+import Atendimento.Ficha;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Main {
+	public static ArrayList<Ficha> fila = new ArrayList<>();
+
 	public static void main(String[] args) {
-//		Enfermeiro a = new Enfermeiro(DBGlobal.pessoas.getNextItemId(), "teste", "aaaa", "coren");
-//		DBGlobal.pessoas.insertData(a);
-//		Medico b = new Medico(DBGlobal.pessoas.getNextItemId(), "medico", "cpf", MedicoEspecialidade.CLINICO_GERAL, "sala 1", "123-4");
-//		DBGlobal.pessoas.insertData(b);
-//
-//		Paciente c = new Paciente(DBGlobal.pessoas.getNextItemId(), "paciente", "cpf", LocalDate.parse("2020-12-30"), "m", "mae", "end", "email", "nacionalidade", "tel", "1234");
-//		DBGlobal.pessoas.insertData(c);
 		System.out.println("Hello world");
+
+		Ficha f1 = new Ficha(1, 1);
+		Ficha f2 = new Ficha(2, 2);
+		Ficha f3 = new Ficha(3, 3);
+		Ficha f4 = new Ficha(4, 4);
+		Ficha f5 = new Ficha(5, 5);
+		fila.add(f1);
+		fila.add(f2);
+		fila.add(f3);
+		fila.add(f4);
+		fila.add(f5);
+
+		f1.setFichaAcolhimentoId(1);
+		f2.setFichaAcolhimentoId(2);
+		f3.setFichaAcolhimentoId(3);
+		f4.setFichaAcolhimentoId(4);
+		f5.setFichaAcolhimentoId(5);
+
+		Collections.sort(Main.fila);
+
+		for (Ficha f : fila) {
+			System.out.println(f.getId());
+		}
+
+
 	}
 }
