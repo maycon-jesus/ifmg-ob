@@ -1,6 +1,8 @@
 package Atendimento;
 
 import Usuarios.MedicoEspecialidade;
+import Usuarios.Paciente;
+import db.DBGlobal;
 import db.DBItem;
 
 import java.time.LocalDateTime;
@@ -28,9 +30,22 @@ public class Ficha extends DBItem implements Comparable<Ficha> {
 		this.horaDaChegada = LocalDateTime.now();
 	}
 
+	public int getFichaAcolhimentoId() {
+		return fichaAcolhimentoId;
+	}
+
 	public void setFichaAcolhimentoId(int fichaAcolhimentoId) {
 		this.fichaAcolhimentoId = fichaAcolhimentoId;
 		this.status = FichaStatus.TRIAGEM_FINALIZADA;
+	}
+
+	public FichaStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(FichaStatus status) {
+		this.status = status;
+		DBGlobal.fichas.onUpdateData(this);
 	}
 
 	public FichaAcolhimento getFichaAcolhimento() {
@@ -54,6 +69,10 @@ public class Ficha extends DBItem implements Comparable<Ficha> {
 		return null;
 	}
 
+	public Paciente getPaciente() {
+		return DBGlobal.pessoas.getPacienteById(this.pacienteId);
+	}
+
 	@Override
 	public int compareTo(Ficha o) {
 		if (this == o) return 0;
@@ -71,6 +90,18 @@ public class Ficha extends DBItem implements Comparable<Ficha> {
 			peso -= 200;
 		}
 
+		Paciente pacienteA = this.getPaciente();
+		int idadeA = pacienteA.getIdade();
+		if (idadeA >= 60) {
+			peso += 100 + ((idadeA - 60) * 10);
+		}
+
+		Paciente pacienteB = o.getPaciente();
+		int idadeB = pacienteB.getIdade();
+		if (idadeB >= 60) {
+			peso -= 100 + ((idadeB - 60) * 10);
+		}
+
 		if (this.status == FichaStatus.TRIAGEM_FINALIZADA) {
 			FichaAcolhimento fichaAcolhimentoA = this.getFichaAcolhimento();
 			FichaAcolhimento fichaAcolhimentoB = o.getFichaAcolhimento();
@@ -79,7 +110,6 @@ public class Ficha extends DBItem implements Comparable<Ficha> {
 		}
 
 		return -1 * peso;
-
 	}
 
 	public LocalDateTime getHoraDaChegada() {
@@ -119,4 +149,11 @@ public class Ficha extends DBItem implements Comparable<Ficha> {
 
 	}
 
+	public int getPacienteId() {
+		return pacienteId;
+	}
+
+	public void setEmTriagem() {
+		this.setStatus(FichaStatus.EM_TRIAGEM);
+	}
 }
