@@ -41,9 +41,9 @@ public class UI {
 
 	public static double promptDouble(String prompt) {
 		System.out.println(prompt);
-		Double d = sc.nextDouble();
+		double d = sc.nextDouble();
 
-		return Double.parseDouble(promptString(prompt));
+		return d;
 	}
 
 	public static String promptSelectString(String prompt, String[] options) {
@@ -63,10 +63,16 @@ public class UI {
 		return promptIntFromRange(prompt, min, max);
 	}
 
-	public static void appMenu() {
-		System.out.println("1 - Cadastrar ficha");
-		System.out.println("2 - Informações do paciente");
-		System.out.println("3 - Realizar triagem do próximo paciente");
+	public static int promptInt(String prompt) {
+        System.out.println(prompt);
+        int s = sc.nextInt();
+        return s;
+    }
+
+    public static void appMenu() {
+        System.out.println("1 - Cadastrar ficha");
+        System.out.println("2 - Informações do paciente");
+        System.out.println("3 - Realizar triagem do próximo paciente");
 		System.out.println("4 - Chamar proximo paciente");
 		System.out.println("5 - Cadastrar enfermeiro");
 		System.out.println("6 - Cadastrar médico");
