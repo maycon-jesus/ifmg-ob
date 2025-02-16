@@ -1,0 +1,190 @@
+Index: .idea/csv-editor.xml
+===================================================================
+diff --git a/.idea/csv-editor.xml b/.idea/csv-editor.xml
+deleted file mode 100644
+--- a/.idea/csv-editor.xml	(revision 6d6bbedd06be8275077b8cc8af995b9b96866766)
++++ /dev/null	(revision 6d6bbedd06be8275077b8cc8af995b9b96866766)
+@@ -1,23 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="CsvFileAttributes">
+-    <option name="attributeMap">
+-      <map>
+-        <entry key="\db\pessoas\0.csv">
+-          <value>
+-            <Attribute>
+-              <option name="separator" value="," />
+-            </Attribute>
+-          </value>
+-        </entry>
+-        <entry key="\db\pessoas\1.csv">
+-          <value>
+-            <Attribute>
+-              <option name="separator" value="," />
+-            </Attribute>
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8393cf4a-815b-419b-9fc0-731b4ec9e864\" name=\"Changes\" comment=\"Classe Paciente, teste\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/csv-editor.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/csv-editor.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/db/pessoas/0.csv\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Atendimento/FichaAcolhimento.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Atendimento/FichaAcolhimento.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/db/DBPessoas.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/db/DBPessoas.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExportToHTMLSettings\">\r\n    <option name=\"OUTPUT_DIRECTORY\" value=\"$PROJECT_DIR$/../sistema-triagem\\exportToHTML\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"FormatOnSaveOptions\">\r\n    <option name=\"myRunOnSave\" value=\"true\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/../..\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;vhsanson&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/maycon-jesus/ifmg-ob.git&quot;,\r\n    &quot;accountId&quot;: &quot;100b7935-4efa-48ce-8b88-b985aa7f518b&quot;\r\n  }\r\n}</component>\r\n  <component name=\"OptimizeOnSaveOptions\">\r\n    <option name=\"myRunOnSave\" value=\"true\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2sjiEAgrcpf9Ft3UV1AlSWcX2cZ\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Run app.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/VITOR SONSON/ifmg-ob/programacao-orientada-objeto-1/sistema-triagem\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"rearrange.code.on.save\": \"true\",\r\n    \"settings.editor.selected.configurable\": \"preferences.editor\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8393cf4a-815b-419b-9fc0-731b4ec9e864\" name=\"Changes\" comment=\"\" />\r\n      <created>1738975273446</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1738975273446</updated>\r\n      <workItem from=\"1738975274568\" duration=\"23000\" />\r\n      <workItem from=\"1738977078404\" duration=\"517000\" />\r\n      <workItem from=\"1739160007552\" duration=\"638000\" />\r\n      <workItem from=\"1739160685209\" duration=\"179000\" />\r\n      <workItem from=\"1739224569811\" duration=\"1677000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Classe Paciente, teste\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1739224673145</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1739224673145</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Classe Paciente, teste\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1739226929484</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1739226929484</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Classe Paciente, teste\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Classe Paciente, teste\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6d6bbedd06be8275077b8cc8af995b9b96866766)
++++ b/.idea/workspace.xml	(date 1739485711289)
+@@ -4,13 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8393cf4a-815b-419b-9fc0-731b4ec9e864" name="Changes" comment="Classe Paciente, teste">
+-      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
++    <list default="true" id="8393cf4a-815b-419b-9fc0-731b4ec9e864" name="Changes" comment="add consultorio to enfermeiro">
++      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/db/pessoas/0.csv" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Atendimento/FichaAcolhimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Atendimento/FichaAcolhimento.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/db/DBPessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DBPessoas.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/db/DBFichaAcolhimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DBFichaAcolhimento.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -24,6 +22,7 @@
+     <option name="RECENT_TEMPLATES">
+       <list>
+         <option value="Class" />
++        <option value="Interface" />
+       </list>
+     </option>
+   </component>
+@@ -47,6 +46,9 @@
+ }</component>
+   <component name="OptimizeOnSaveOptions">
+     <option name="myRunOnSave" value="true" />
++  </component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="ProjectErrors" />
+   </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 4
+@@ -61,7 +63,7 @@
+     "Application.Run app.executor": "Run",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "main",
++    "git-widget-placeholder": "ficha",
+     "kotlin-language-version-configured": "true",
+     "last_opened_file_path": "C:/Users/VITOR SONSON/ifmg-ob/programacao-orientada-objeto-1/sistema-triagem",
+     "node.js.detected.package.eslint": "true",
+@@ -73,15 +75,15 @@
+     "project.structure.proportion": "0.0",
+     "project.structure.side.proportion": "0.0",
+     "rearrange.code.on.save": "true",
+-    "settings.editor.selected.configurable": "preferences.editor",
++    "settings.editor.selected.configurable": "inlay.hints",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
++        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
++        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -98,6 +100,10 @@
+       <workItem from="1739160007552" duration="638000" />
+       <workItem from="1739160685209" duration="179000" />
+       <workItem from="1739224569811" duration="1677000" />
++      <workItem from="1739232558571" duration="2237000" />
++      <workItem from="1739312224949" duration="4915000" />
++      <workItem from="1739399980486" duration="3059000" />
++      <workItem from="1739485341834" duration="341000" />
+     </task>
+     <task id="LOCAL-00001" summary="Classe Paciente, teste">
+       <option name="closed" value="true" />
+@@ -115,7 +121,23 @@
+       <option name="project" value="LOCAL" />
+       <updated>1739226929484</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="prompts add medico, enfermeiro e paciente;">
++      <option name="closed" value="true" />
++      <created>1739401655817</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1739401655817</updated>
++    </task>
++    <task id="LOCAL-00004" summary="add consultorio to enfermeiro">
++      <option name="closed" value="true" />
++      <created>1739403280378</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1739403280378</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -123,6 +145,8 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Classe Paciente, teste" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Classe Paciente, teste" />
++    <MESSAGE value="prompts add medico, enfermeiro e paciente;" />
++    <MESSAGE value="add consultorio to enfermeiro" />
++    <option name="LAST_COMMIT_MESSAGE" value="add consultorio to enfermeiro" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/discord.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DiscordProjectSettings\">\r\n    <option name=\"show\" value=\"ASK\" />\r\n    <option name=\"description\" value=\"\" />\r\n    <option name=\"applicationTheme\" value=\"default\" />\r\n    <option name=\"iconsTheme\" value=\"default\" />\r\n    <option name=\"button1Title\" value=\"\" />\r\n    <option name=\"button1Url\" value=\"\" />\r\n    <option name=\"button2Title\" value=\"\" />\r\n    <option name=\"button2Url\" value=\"\" />\r\n    <option name=\"customApplicationId\" value=\"\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/discord.xml b/.idea/discord.xml
+--- a/.idea/discord.xml	(revision 6d6bbedd06be8275077b8cc8af995b9b96866766)
++++ b/.idea/discord.xml	(date 1739485474556)
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="DiscordProjectSettings">
+-    <option name="show" value="ASK" />
++    <option name="show" value="PROJECT_FILES" />
+     <option name="description" value="" />
+     <option name="applicationTheme" value="default" />
+     <option name="iconsTheme" value="default" />
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_23\" default=\"true\" project-jdk-name=\"openjdk-23\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 6d6bbedd06be8275077b8cc8af995b9b96866766)
++++ b/.idea/misc.xml	(date 1739485711329)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="openjdk-23" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="openjdk-23 (WSL) (2)" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file

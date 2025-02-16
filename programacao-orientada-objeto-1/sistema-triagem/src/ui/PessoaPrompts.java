@@ -1,5 +1,6 @@
 package ui;
 
+import Atendimento.Ficha;
 import Usuarios.Enfermeiro;
 import Usuarios.Medico;
 import Usuarios.MedicoEspecialidade;
@@ -11,11 +12,9 @@ import java.time.LocalDate;
 public class PessoaPrompts {
 	public static Paciente criarPaciente() {
 		System.out.println("Criando um paciente");
-		System.out.println("Nome completo: ");
-		String nomeCompleto = UI.sc.next();
+		String nomeCompleto = UI.promptString("Nome completo: ");
 
-		System.out.println("CPF (12345678901): ");
-		String cpf = UI.sc.next();
+		String cpf = UI.promptString("CPF (12345678901): ");
 
 		Paciente paciente = DBGlobal.pessoas.getPacienteByCpf(cpf);
 
@@ -39,6 +38,13 @@ public class PessoaPrompts {
 		DBGlobal.pessoas.insertData(paciente);
 
 		return paciente;
+	}
+
+	public static Ficha criarFicha(Paciente paciente) {
+		Ficha ficha = new Ficha(DBGlobal.fichas.getNextItemId(), paciente.getId());
+		DBGlobal.fichas.insertData(ficha);
+		System.out.println("Ficha criada com sucesso!!!");
+		return ficha;
 	}
 
 	public static Enfermeiro criarEnfermeiro() {
