@@ -64,15 +64,15 @@ public class UI {
 	}
 
 	public static int promptInt(String prompt) {
-        System.out.println(prompt);
-        int s = sc.nextInt();
-        return s;
-    }
+		System.out.println(prompt);
+		int s = sc.nextInt();
+		return s;
+	}
 
-    public static void appMenu() {
-        System.out.println("1 - Cadastrar ficha");
-        System.out.println("2 - Informações do paciente");
-        System.out.println("3 - Realizar triagem do próximo paciente");
+	public static void appMenu() {
+		System.out.println("1 - Cadastrar ficha");
+		System.out.println("2 - Informações do paciente");
+		System.out.println("3 - Realizar triagem do próximo paciente");
 		System.out.println("4 - Chamar proximo paciente");
 		System.out.println("5 - Cadastrar enfermeiro");
 		System.out.println("6 - Cadastrar médico");
@@ -102,6 +102,9 @@ public class UI {
 				break;
 			case 6:
 				PessoaPrompts.criarMedico();
+				break;
+			case 0:
+				System.exit(0);
 				break;
 		}
 		appMenu();
