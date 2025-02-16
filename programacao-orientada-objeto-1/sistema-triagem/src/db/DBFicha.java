@@ -4,6 +4,7 @@ import Atendimento.Ficha;
 import Atendimento.FichaStatus;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class DBFicha extends DBManager<Ficha> {
 
@@ -30,6 +31,16 @@ public class DBFicha extends DBManager<Ficha> {
 
 	@Override
 	String instanceToStringData(Ficha data) {
-		return "";
+		return data.getId() + "," + data.getPacienteId() + "," + data.getFichaAcolhimentoId() + "," + data.getStatus() + "," + data.getHoraDaChegada();
+	}
+
+	public ArrayList<Ficha> getFichasByStatus(FichaStatus status) {
+		ArrayList<Ficha> nArr = new ArrayList<>();
+		for (Ficha item : items) {
+			if (item.getStatus() == status) {
+				nArr.add(item);
+			}
+		}
+		return nArr;
 	}
 }

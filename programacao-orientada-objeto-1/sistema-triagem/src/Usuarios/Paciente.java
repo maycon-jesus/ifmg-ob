@@ -73,4 +73,12 @@ public class Paciente extends Pessoa implements PrintData {
 		System.out.println("Telefone: " + getTelefone());
 		System.out.println("Cartao do Sus: " + getCartaoDoSus());
 	}
+
+	public int getIdade() {
+		int anos = LocalDate.now().getYear() - this.dataNascimento.getYear();
+		if (LocalDate.now().getDayOfYear() > this.dataNascimento.getDayOfYear()) {
+			anos++;
+		}
+		return anos;
+	}
 }

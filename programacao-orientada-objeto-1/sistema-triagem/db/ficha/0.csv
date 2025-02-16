@@ -1,0 +1,3 @@
+id, pacienteId, fichaAcolhidmentoId, status, horaDaChegada
+1,1,0,EM_TRIAGEM,2025-02-16T13:45:46.505129363
+1,1,0,EM_TRIAGEM,2025-02-16T14:05:32.512584530

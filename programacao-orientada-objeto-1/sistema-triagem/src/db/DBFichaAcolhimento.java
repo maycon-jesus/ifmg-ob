@@ -53,4 +53,13 @@ public class DBFichaAcolhimento extends DBManager<FichaAcolhimento> {
 	String instanceToStringData(FichaAcolhimento data) {
 		return "";
 	}
+
+	public FichaAcolhimento getFichaAcolhimentoById(int id) {
+		for (FichaAcolhimento ficha : this.items) {
+			if (ficha.getId() == id) {
+				return ficha;
+			}
+		}
+		return null;
+	}
 }
