@@ -37,9 +37,9 @@ public class UI {
 
     public static double promptDouble(String prompt) {
         System.out.println(prompt);
-        Double d = sc.nextDouble();
+        double d = sc.nextDouble();
 
-        return Double.parseDouble(promptString(prompt));
+        return d;
     }
 
     public static String promptSelectString(String prompt, String[] options) {
@@ -57,6 +57,12 @@ public class UI {
         int s = sc.nextInt();
         if (s >= 0 && s <= min) return min;
         return promptIntFromRange(prompt, min, max);
+    }
+
+    public static int promptInt(String prompt) {
+        System.out.println(prompt);
+        int s = sc.nextInt();
+        return s;
     }
 
     public static void appMenu() {
