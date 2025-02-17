@@ -1,6 +1,6 @@
 package Atendimento;
 
-import Usuarios.MedicoEspecialidade;
+import Usuarios.Medico;
 import Usuarios.Paciente;
 import db.DBGlobal;
 import db.DBItem;
@@ -9,10 +9,11 @@ import java.time.LocalDateTime;
 
 public class Ficha extends DBItem implements Comparable<Ficha> {
 
-	int pacienteId;
-	int fichaAcolhimentoId;
-	FichaStatus status;
-	LocalDateTime horaDaChegada;
+	private int pacienteId;
+	private int fichaAcolhimentoId;
+	private int medicoId;
+	private FichaStatus status;
+	private LocalDateTime horaDaChegada;
 
 	public Ficha(int id, int pacienteId, int fichaAcolhidmentoId, FichaStatus status, LocalDateTime horaDaChegada) {
 		super(id);
@@ -34,11 +35,6 @@ public class Ficha extends DBItem implements Comparable<Ficha> {
 		return fichaAcolhimentoId;
 	}
 
-	public void setFichaAcolhimentoId(int fichaAcolhimentoId) {
-		this.fichaAcolhimentoId = fichaAcolhimentoId;
-		this.status = FichaStatus.TRIAGEM_FINALIZADA;
-	}
-
 	public FichaStatus getStatus() {
 		return status;
 	}
@@ -49,24 +45,7 @@ public class Ficha extends DBItem implements Comparable<Ficha> {
 	}
 
 	public FichaAcolhimento getFichaAcolhimento() {
-		switch (this.getId()) {
-			case 1:
-				return new FichaAcolhimento(1, 101, "Dor de cabeça", "2 dias", "Hipertensão", "Aspirina", "Sim", "Nenhuma", "Não", "Não", "Histórico de diabetes", true, false, "Dor intensa na cabeça", 38.5, "120/80", 80, 18.0, 98, 90, true, "Desmaios", "Febre alta", MedicoEspecialidade.PEDIATRA, PrioridadeManchester.URGENTE);
-
-			case 2:
-				return new FichaAcolhimento(2, 102, "Tosse seca", "1 semana", "Asma", "Salbutamol", "Não", "Nenhuma", "Não", "Sim", "Histórico de asma", false, true, "Desconforto ao respirar", 37.0, "110/70", 75, 16.0, 99, 85, true, "Dificuldade respiratória", "Suspeita de infecção pulmonar", MedicoEspecialidade.PEDIATRA, PrioridadeManchester.POUCO_URGENTE);
-
-			case 3:
-				return new FichaAcolhimento(3, 103, "Dor abdominal", "3 dias", "Gastrite", "Omeprazol", "Sim", "Nenhuma", "Não", "Não", "Histórico de úlcera", false, false, "Dor intensa no abdômen", 37.8, "115/75", 78, 17.5, 97, 100, false, "Vômito", "Dor intensa", MedicoEspecialidade.PEDIATRA, PrioridadeManchester.URGENTE);
-
-			case 4:
-				return new FichaAcolhimento(4, 104, "Febre e calafrios", "2 dias", "Nenhuma", "Paracetamol", "Não", "Nenhuma", "Sim", "Não", "Histórico de infecções recorrentes", true, false, "Calafrios intensos", 39.0, "120/85", 82, 20.0, 96, 95, true, "Confusão mental", "Sinais de infecção severa", MedicoEspecialidade.CLINICO_GERAL, PrioridadeManchester.URGENTE);
-
-			case 5:
-				return new FichaAcolhimento(5, 105, "Dor no peito", "1 hora", "Nenhuma", "Nenhuma", "Não", "Nenhuma", "Não", "Não", "Histórico de doenças cardíacas", false, false, "Dor aguda no peito", 36.5, "130/90", 85, 19.0, 99, 110, false, "Falta de ar", "Suspeita de infarto", MedicoEspecialidade.CLINICO_GERAL, PrioridadeManchester.EMERGENCIA);
-
-		}
-		return null;
+		return DBGlobal.fichasAcolhimento.getFichaAcolhimentoById(this.fichaAcolhimentoId);
 	}
 
 	public Paciente getPaciente() {
@@ -155,5 +134,15 @@ public class Ficha extends DBItem implements Comparable<Ficha> {
 
 	public void setEmTriagem() {
 		this.setStatus(FichaStatus.EM_TRIAGEM);
+	}
+
+	public void setTriagemFinalizada(int fichaAcolhimentoId) {
+		this.fichaAcolhimentoId = fichaAcolhimentoId;
+		this.setStatus(FichaStatus.TRIAGEM_FINALIZADA);
+	}
+
+	public void setAtendido(Medico medico) {
+		this.medicoId = medico.getId();
+		this.setStatus(FichaStatus.ATENDIMENTO_FINALIZADO);
 	}
 }

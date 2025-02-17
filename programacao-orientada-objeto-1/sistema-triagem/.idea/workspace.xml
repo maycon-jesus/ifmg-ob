@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8393cf4a-815b-419b-9fc0-731b4ec9e864" name="Changes" comment="done DBFichaAcolhimento">
-      <change afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
+    <list default="true" id="8393cf4a-815b-419b-9fc0-731b4ec9e864" name="Changes" comment="app close option">
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/ficha/0.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/pessoas/0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/db/pessoas/0.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Atendimento/Ficha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Atendimento/Ficha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Atendimento/FichaStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Atendimento/FichaStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Usuarios/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuarios/Paciente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Atendimento/FichaAcolhimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Atendimento/FichaAcolhimento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/db/DBFicha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DBFicha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/db/DBFichaAcolhimento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DBFichaAcolhimento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/DBGlobal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DBGlobal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/DBPessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/DBPessoas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/FilaOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/FilaOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/PessoaPrompts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/PessoaPrompts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/TriagemPrompts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/TriagemPrompts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/UI.java" afterDir="false" />
@@ -68,29 +69,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Run app.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "ficha",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/VITOR SONSON/ifmg-ob/programacao-orientada-objeto-1/sistema-triagem",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Run app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/VITOR SONSON/ifmg-ob/programacao-orientada-objeto-1/sistema-triagem&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -120,6 +121,7 @@
       <workItem from="1739719216539" duration="751000" />
       <workItem from="1739719984494" duration="636000" />
       <workItem from="1739724218203" duration="2009000" />
+      <workItem from="1739812618938" duration="3242000" />
     </task>
     <task id="LOCAL-00001" summary="Classe Paciente, teste">
       <option name="closed" value="true" />
@@ -161,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739485773567</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="app close option">
+      <option name="closed" value="true" />
+      <created>1739733937900</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739733937901</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +182,7 @@
     <MESSAGE value="prompts add medico, enfermeiro e paciente;" />
     <MESSAGE value="add consultorio to enfermeiro" />
     <MESSAGE value="done DBFichaAcolhimento" />
-    <option name="LAST_COMMIT_MESSAGE" value="done DBFichaAcolhimento" />
+    <MESSAGE value="app close option" />
+    <option name="LAST_COMMIT_MESSAGE" value="app close option" />
   </component>
 </project>

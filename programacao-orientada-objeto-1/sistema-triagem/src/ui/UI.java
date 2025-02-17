@@ -1,6 +1,8 @@
 package ui;
 
 import Atendimento.Ficha;
+import Usuarios.Enfermeiro;
+import Usuarios.Medico;
 import Usuarios.Paciente;
 
 import java.time.LocalDate;
@@ -73,7 +75,7 @@ public class UI {
 		System.out.println("1 - Cadastrar ficha");
 		System.out.println("2 - Informações do paciente");
 		System.out.println("3 - Realizar triagem do próximo paciente");
-		System.out.println("4 - Chamar proximo paciente");
+		System.out.println("4 - Realizar atendimento com especialista (médico)");
 		System.out.println("5 - Cadastrar enfermeiro");
 		System.out.println("6 - Cadastrar médico");
 		System.out.println("0 - Encerrar");
@@ -86,13 +88,39 @@ public class UI {
 				break;
 			}
 			case 3: {
+				Enfermeiro enfermeiro = PessoaPrompts.selectEnfermeiro();
+				if (enfermeiro == null) {
+					System.out.println("NENHUM ENFERMEIRO CADASTRADO NO SISTEMA!!!");
+					break;
+				}
+
 				Ficha ficha = FilaOperations.getNextFichaTriagem();
 				if (ficha == null) {
 					System.out.println("A recepção está vazia!!!");
 				} else {
+
 					Paciente paciente = ficha.getPaciente();
-					ficha.setEmTriagem();
 					System.out.println("Fazendo triagem do paciente: " + paciente.getNomeCompleto());
+					System.out.println("SALA: " + enfermeiro.getConsultorio());
+					TriagemPrompts.fazerTriagem(ficha, paciente, enfermeiro);
+				}
+				break;
+			}
+			case 4: {
+				Medico medico = PessoaPrompts.selectMedico();
+				if (medico == null) {
+					System.out.println("NENHUM MÉDICO CADASTRADO NO SISTEMA!!!");
+					break;
+				}
+
+				Ficha ficha = FilaOperations.getNextFichaAtendimentoMedico(medico);
+				if (ficha == null) {
+					System.out.println("A fila de espera de " + medico.getEspecialidade() + " está vazia!!!");
+				} else {
+					Paciente paciente = ficha.getPaciente();
+					System.out.println("Chamando paciente " + paciente.getNomeCompleto() + " para a sala " + medico.getConsultorio() + " de " + medico.getEspecialidade());
+					ficha.getFichaAcolhimento().exibirInformacoes();
+					ficha.setAtendido(medico);
 				}
 				break;
 			}

@@ -2,6 +2,7 @@ package db;
 
 import Atendimento.Ficha;
 import Atendimento.FichaStatus;
+import Usuarios.MedicoEspecialidade;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -38,6 +39,16 @@ public class DBFicha extends DBManager<Ficha> {
 		ArrayList<Ficha> nArr = new ArrayList<>();
 		for (Ficha item : items) {
 			if (item.getStatus() == status) {
+				nArr.add(item);
+			}
+		}
+		return nArr;
+	}
+
+	public ArrayList<Ficha> getFichasByStatusAndEspecialidade(FichaStatus status, MedicoEspecialidade especialidade) {
+		ArrayList<Ficha> nArr = new ArrayList<>();
+		for (Ficha item : items) {
+			if (item.getStatus() == status && item.getFichaAcolhimento().getEspecialidadeNecessaria() == especialidade) {
 				nArr.add(item);
 			}
 		}

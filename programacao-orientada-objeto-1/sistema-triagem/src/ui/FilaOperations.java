@@ -2,6 +2,7 @@ package ui;
 
 import Atendimento.Ficha;
 import Atendimento.FichaStatus;
+import Usuarios.Medico;
 import db.DBGlobal;
 
 import java.util.ArrayList;
@@ -16,5 +17,15 @@ public class FilaOperations {
 
 		Collections.sort(filaRecepcao);
 		return filaRecepcao.get(0);
+	}
+
+	public static Ficha getNextFichaAtendimentoMedico(Medico medico) {
+		ArrayList<Ficha> filaEspecialidade = DBGlobal.fichas.getFichasByStatusAndEspecialidade(FichaStatus.TRIAGEM_FINALIZADA, medico.getEspecialidade());
+		if (filaEspecialidade.size() == 0) {
+			return null;
+		}
+
+		Collections.sort(filaEspecialidade);
+		return filaEspecialidade.get(0);
 	}
 }

@@ -1,2 +1,5 @@
 id, nome-completo, cpf, tipo-pessoa, coren, especialidade, consultorio, crm, dataNascimento, sexo, nomeMae, endereco, email, nacionalidade, telefone, cartaoDoSus
 1,maycon jesus,123456789,PACIENTE,null,null,null,null,2003-01-07,Masculino,maria,endereco,mayconjesus07,br,3199999,1234
+1,enf 1,999999,ENFERMEIRO,coren123,null,Sala 2,null,null,null,null,null,null,null,null,null
+2,med ped,123,MEDICO,null,PEDIATRA,sala 3,123,null,null,null,null,null,null,null,null
+3,med geral,123,MEDICO,null,CLINICO_GERAL,sala 4,159,null,null,null,null,null,null,null,null

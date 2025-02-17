@@ -4,6 +4,7 @@ import Usuarios.*;
 import utils.StringReplacer;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class DBPessoas extends DBManager<Pessoa> {
 
@@ -66,6 +67,26 @@ public class DBPessoas extends DBManager<Pessoa> {
 			String cartaoDoSus = paciente.getCartaoDoSus();
 			return StringReplacer.dbLineMaker("{0},{1},{2},{3},null,null,null,null,{4},{5},{6},{7},{8},{9},{10},{11}", new String[]{String.valueOf(id), nomeCompleto, cpf, tipoPessoa, dataNascimento, sexo, nomeMae, endereco, email, nacionalidade, telefone, cartaoDoSus});
 		}
+	}
+
+	public ArrayList<Enfermeiro> getEnfermeiros() {
+		ArrayList<Enfermeiro> enfermeiros = new ArrayList<>();
+		for (Pessoa pessoa : items) {
+			if (pessoa instanceof Enfermeiro) {
+				enfermeiros.add((Enfermeiro) pessoa);
+			}
+		}
+		return enfermeiros;
+	}
+
+	public ArrayList<Medico> getMedicos() {
+		ArrayList<Medico> medicos = new ArrayList<>();
+		for (Pessoa pessoa : items) {
+			if (pessoa instanceof Medico) {
+				medicos.add((Medico) pessoa);
+			}
+		}
+		return medicos;
 	}
 
 	public Paciente getPacienteById(int id) {

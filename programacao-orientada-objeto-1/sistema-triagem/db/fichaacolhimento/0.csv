@@ -1,0 +1,2 @@
+id, pacienteId, enfermeiroId, Sintomas,tempoDosSintomas, doencasPreExistentes,usoDeMedicamento, jaFezCirurgia, AlergiaMedicamentoSubstancia, gravida, traumaAcidenteRecente, historicoFamiliar, fumante,consomeAlcool, infoDor, temperaturaCorporal, pressaoSanguinea, frequeciaCardiaca,frequenciaRespiratoria,saturacaoDeOxigenio, taxaDeGlicose, consegueAndar, sinaisDeEmergencia, sinaisDeInfeccaoGrave, escalaGlasgow, especialidadeNecessaria, prioridade
+1,1,1,sint,temp,doen,med,cir,aler,gravida,aci,hist,1,1,lll,55.0,12/8,99,12.0,10,99,1,sin,infc,12,CLINICO_GERAL,EMERGENCIA
